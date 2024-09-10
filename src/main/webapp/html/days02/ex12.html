@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<style>
+	/* link에 스타일 지정 */
+/* 	a:link{
+		color:red;
+		text-decoration: none;
+	}
+	a:visited{
+		color:pink;
+		text-decoration: none;
+	}
+	a:hover {
+		color:red;
+	} */
+	a:active {
+		color: purple;
+		text-decoration: overline underline line-through;
+	}
+	a{
+		color: black;
+		text-decoration: none;
+	}
+	a:hover {
+	color : red;
+	text-decoration: underline;
+	/* text-transform:uppercase; */
+	text-transform: capitalize;
+	}
+</style>
+</head>
+<body>
+<h3>html link</h3>
+<br>
+<!-- 책갈피(북마크) 구현 -->
+<!-- 웹 페이지의 특정 부분으로 바로 이동하는 기능
+	 웹 페이지가 매우 긴 경우 - 북마크
+	 내가 원하는 위치로 자동 스크롤 -->
+	 <a href="../days01/ex01.html#webid">../days01/ex01.html fragment</a>
+	 <br>
+<!-- a 링크의 target 속성 설명 
+	   링크된 문서를 열 위치를 지정하는 속성
+	   기본값 _self 자기 자신 창 / 탭 에서 문서를 연다
+	   _blank     새로운 창 / 탭에서 문서를 연다.
+	   _top	      창 전체에서 문서를 연다.
+	   _parent    부모(상위) frame에 문서를 연다.
+	   이름
+	   -->
+<a href="../days01/ex01.html" target="_self">days01/ex01.html</a>
+<br>
+<a href="../days01/ex01.html" target="_blank">days01/ex01.html</a>
+<br>
+Link - 사용자라 link를 통해서 다른 페이지로 이동.
+	 - 하이퍼 링크
+	 - a 태그
+	 - link tag 위에 마우스를 올리면 커서가 변화
+	 - 텍스트, 이미지, 다른 html요소
+<br>
+<a href="http://naver.com">real naver</a>
+<br>
+<a href="#">naver</a><!-- fragment -->
+<br>
+<a href="">naver</a>
+<br>
+<a href="http://daum.net">daum</a>
+<br>
+<!-- absolute path(scheme, protocol있는 것) -->
+<a href="http://localhost/webPro/html/days02/ex01.html">days01.ex01.html이야</a>
+<br>
+<!-- relational path -->
+<a href="ex01.html">days01.ex01.html 상대경로1</a>
+<br>
+<!-- relational path -->
+<a href="/webPro/html/days02/ex01.html">/days01.ex01.html 상대경로2</a>
+<br>
+<!-- relational path -->
+<a href="../days02/ex01.html">/days01.ex01.html 상대경로3</a>
+</html>
