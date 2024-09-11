@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<style>
+span {
+	color: red;
+	background-color: yellow;
+	border: solid 1px gray;
+}
+</style>
+<script>
+	function spanHide(){
+			alert("숨기기 버튼 클릭");
+			
+			var real1 = document.getElementById("test1");
+			real1.style.display="none";
+	}
+	
+	function spanShow(){
+		alert("보이기 버튼 클릭");
+		
+		var real1 = document.getElementById("test1");
+		real1.style.display="inline";
+}
+</script>
+</head>
+<body>
+	<!-- span 태그 
+		ㄴContainer
+		ㄴinline tag-->
+	<div id="test1">
+		<span id="span1">seeker</span>
+		<span>test</span>
+		<span>너비너비</span>
+		<span>높이높이</span>
+	</div>
+
+	<br>
+	<button onclick="spanHide();">숨기기</button>
+	<button onclick="spanShow();">보이기</button>
+</body>
+</html>

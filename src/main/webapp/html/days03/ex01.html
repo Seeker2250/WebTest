@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<style>
+	img {
+		vertical-align: bottom;
+		width : 500px;
+		height : 333px;
+		/* css니까 여기서는 단위를 줘야해*/
+	}
+</style>
+</head>
+<body>
+	<h3>html 이미지</h3>
+	<!-- image 태그
+			ㄴ 웹 페이지의 디자인과 모양을 향상
+			ㄴ 인라인 모드
+			ㄴ alt 속성 : 이미지 대체할 텍스트 지정
+			  src 속성 : 이미지 경로(URL)은 필수
+			  
+			  너비 + 높이 속성
+			  반드시 너비+높이 속성은 설정을 하자
+			  (미리 렌더링을 할 수 있게 해서 성능을 올리자)
+			  f12와 페이지 소스 보기는 엄연히 따지자면 달라
+			  
+			  페이지 소스보기는 서버에 요청해서 받아온 값이고
+			  f12는 렌더링 된 값이야
+	
+	html 폴더
+		ㄴ images 폴더 생성
+	webapp
+		ㄴ images 폴더 생성
+			ㄴ SiSt.ico
+			-->
+
+	<img alt="이탈리안 튤립" src="/webPro/images/pic_trulli.jpg" width = "500" height = "333">
+	<!-- 여기선 html이니까 단위 생략하면 자동으로 px야 -->
+	<img alt="이탈리안 튤립" src="http://localhost/webPro/images/pic_trulli.jpg">
+	<img alt="이탈리안 튤립" src="../../images/pic_trulli.jpg">
+	<!-- 경로 못 찾으면 개발자도구에서 network 찾아가서 ctrl+r -->
+	<!-- block이라서 그냥  -->
+	<hr>
+	<!-- 모든 브라우저(크롬, 파이어폭스, 사파리 등)에서
+		 일반적으로 지원하는 이미지 파일 형식 : gif, ico, jpeg, png, svg, apng 
+		 (주의) 너무 큰 이미지를 로드하는 데에 시간이 걸리기에
+		 웹 페이지의 속도가 느려질 수 있다.
+		 이미지를 삽입하는 게 아니라
+		 url을 연결하는 것이기 때문에~-->
+	<a href="./../../images/pic_trulli.jpg" target="_blank">
+        <img alt="이탈리안 튤립" src="./../../images/pic_trulli.jpg" style="width: 100px; height: 75px">
+     </a>
+     
+     
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+</head>
+<body>
+	<!-- picture 태그
+		ㄴ 반응형 웹을 만들 때 사용
+		ㄴ 반응형 웹 디자인(reponsive web design, RWD)
+			하나의 웹 사이트들이 접속한 다양한 디바이스에
+			자동으로 맞춤형 출력(width, height)
+		ㄴ 다양한 기기마다 알맞은 이미지를 선택할 수 있도록 하는 태그
+			source 태그
+			마지막에 img tag 설정 -->
+<picture>
+	<source media="(min-width:650px)"
+		srcset="../../images/img_pink_flowers.jpg">
+	<source media="(min-width:450px)"
+		srcset="../../images/img_white_flower.jpg">
+	<img alt="" src="../../images/img_orange_flowers.jpg">
+</picture>
+</body>
+</html>
