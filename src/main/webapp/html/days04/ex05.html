@@ -1,0 +1,49 @@
+var hide = document.getElementById("demo");<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div{
+            background-color: yellow;
+        }
+        span{
+            border: solid 1px red;
+        }
+    </style>
+    <script>
+        var hide = document.getElementById("demo");
+        function hideDemo(){
+            demo.style.display="none";
+        }
+        function showDemo(){
+            var show = document.getElementById("demo");
+            demo.style.display="block"	
+        }
+    </script>
+  </head>
+  <body>
+    안녕하세요 <span>김준석</span>입니다
+    안녕하세요 <div>김준석</div>입니다
+    <!-- [div]
+        ㄴ다른 html element의 block container로 사용
+        
+     [span]
+        ㄴ다른 html element의 inline container로 사용
+         -->
+    <button onclick="hideDemo();">숨기기</button>
+    <button onClick="showDemo();">보이기</button>
+    <br />
+    <div id="demo">
+      <span>이시훈</span><br>
+      <span>김준석</span><br>
+      <span>김재민</span><br>
+    </div>
+  </body>
+</html>

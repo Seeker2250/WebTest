@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- 더미 텍스트 -->
+    lorem ipsum
+    <!-- div>lorem1 -->
+    <div>Lorem.</div>
+    <!-- div>lorem2 -->
+    <div>Lorem, ipsum.</div>
+    <!-- div>lorem3 -->
+    <div>Lorem, ipsum dolor.</div>
+
+    <!-- ul>li>lorem1 -->
+    <ul>
+      <li>Lorem.</li>
+    </ul>
+
+    <!-- ul.generic-list>li.item*5>lorem10 -->
+    <ul class="generic-list">
+      <li class="item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+        expedita.
+      </li>
+      <li class="item">
+        Rem ullam veniam tempore quisquam et harum optio impedit at!
+      </li>
+      <li class="item">
+        Hic ullam nulla omnis, vel incidunt asperiores distinctio illum itaque!
+      </li>
+      <li class="item">
+        Blanditiis nisi eveniet libero quia aut est, dicta porro nemo.
+      </li>
+      <li class="item">
+        Dolorum possimus veniam deserunt earum nesciunt suscipit veritatis quae
+        mollitia?
+      </li>
+    </ul>
+
+    <!-- 암묵적으로 이름 생략 - 부무 element로 추측 가능할 때-->
+    <!-- ul>.item*3>lorem10 -->
+    <ul>
+      <li class="item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+        laudantium.
+      </li>
+      <li class="item">
+        Quo asperiores rerum nesciunt quas repellat rem fugiat natus alias.
+      </li>
+      <li class="item">
+        Obcaecati sed voluptatum dolore tempore nihil vel unde porro aliquam.
+      </li>
+    </ul>
+
+    <!-- div#box+div.sample -->
+    <!-- #box+.sample -->
+
+    <!-- em>span.info -->
+    <!-- em>.info -->
+
+    <!-- table>tr#row$*4>td[colspan=2] -->
+    <!-- table>#row$*4>[colspan=2] -->
+
+    <!-- div>#page+.logo+ul#navigation>li*5>a  -->
+    <div>
+      <div id="page"></div>
+      <div class="logo"></div>
+      <ul id="navigation">
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+      </ul>
+    </div>
+
+    <!-- #page>.logo+ul#navigation>li*5>a -->
+    <div id="page">
+      <div class="logo"></div>
+      <ul id="navigation">
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+      </ul>
+    </div>
+
+    
+  </body>
+</html>
