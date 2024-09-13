@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /* class = "team" 
+            ㄴ 클래스명은 대소문자 구분
+        id=""
+         ㄴ 아이디명도 대소문자 구분
+         ㄴ 아이디는 중간에 공백을 사용할 수 없다
+         ㄴ 숫자로 시작할 수 없다*/
+
+      .team1 {
+        background-color: yellow;
+      }
+      .team2 {
+        background-color: green;
+      }
+      li.teamleader {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="team1">
+      <ul>
+        <li class="teamleader">김준석</li>
+        <li>전재윤</li>
+        <li>박준용</li>
+        <li>송세호</li>
+        <li>이시훈</li>
+      </ul>
+    </div>
+    <div class="team2">
+      <ul>
+        <li class="teamleader">원충희</li>
+        <li>김선우</li>
+        <li>김재민</li>
+        <li>최사랑</li>
+        <li>김인경</li>
+      </ul>
+    </div>
+    <script>
+      // jquery로 수정
+      // team2에 있는 li에 있는 모든 text 먼저 가져와
+      // $("jquery selector") jquery selector는 모든 css selector를 포함해
+      // $(".team2 ul li").each(element => {//jquery에는 forEach함수가 없다.
+      //   console.log(element);
+      // });
+
+
+      // $(".team2 ul li").each(function( index ){
+      //   //jquery에는 forEach함수가 없다.
+      //   console.log(index + ": " + $(this).text());
+      // });
+
+
+      // $(".team2 ul li").each(function( index, element ){
+      //   //jquery에는 forEach함수가 없다.
+      //   console.log(index + ": " + $(this).text() + ":" + element.innerText);//element는 js객체라 element는 innerText써야해
+      //   // text()는 jquery 함수라서 jquery 객체만 가능
+      // });
+
+      
+      $(".team2 ul li").each(( index, element )=>{
+        //arrow function 쓰면 $(this).text()안나와
+        console.log(this);//this가 window객체네(람다라서 그래)
+        console.log(index + "/ " + $(this).text() + "/" + element.innerText);
+       
+      });
+
+      $(".team2 ul li").each(function( index, element ){
+        //jquery에는 forEach함수가 없다.
+        console.log(this);//이건 li가 나오네
+        console.log(index + ": " + $(this).text()+ "/" + element.innerText);
+        // jquery method click event
+        // element를 쓰고 싶은데 jquery 객체여야 하니까 변환해
+        // $(element)
+        // $(this).click(function(){
+        //   console.log("click");
+        //   // this.remove(); 이건 javascript로 삭제
+        //   $(".team2 ul li").remove();
+        // });
+
+
+      //   $(this).on("click", function(){
+      //     console.log(this);
+      //     $(this).remove();//이건 jquery method의 remove야
+      //   })// 
+
+      });
+
+      // $(".team2 ul li").on("click", function(){
+      // $(".team2 ul li").css("visibility", "hidden");
+      // });
+
+    //   $(".team2 ul li").on("click", function(){
+    //   $(".team2 ul li").remove();
+    //   $(this).parent.remove(); //자기 부모 태그삭제
+    //   $(this).siblings().remove();
+    // });
+
+    $(".team2 ul li").on("click", function(){
+      // $(this).next().remove();//자기 다음 꺼 삭제
+        // this.nextElementSibling.remove();//자기랑 같은 위상인 다음 요소 삭제
+    });
+
+    // for (var i = 0; i < team2List.length; index++) {
+      
+    //  team2List team2List[i].addEventListener("click", function (){
+    //     )};
+    //  }
+      
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body onload="init()">
+    <form>
+      색상 : <input type="color" id="color" />
+      <br />
+      설문 시작일 : <input type="date" id="servey_start" /> 설문 종료일 :
+      <input
+        type="date"
+        id="servey_end"
+        min="2024-09-01"
+        max="2024-09-30"
+      /><br />
+      datatime-local : <input type="datetime-local" /><br />
+      datetime : <input type="datetime" /><br />
+      첨부파일 : <input type="file" id="attach1" name="attach1" /><br />
+      첨부파일 : <input type="file" id="attach2" name="attach2" /><br />
+      다중 첨부파일 :
+      <input
+        type="file"
+        id="attach3"
+        name="attach3"
+        multiple="multiple"
+      /><br />
+      <!-- hidden type -->
+      <input type="hidden" name="nickname" value="honggildong" /><br />
+      <input type="hidden" name="age" value="20" /><br />
+      <input type="image" src="../../images/programming.gif" /><br />
+      <!-- 년, 월 선택 가능한 input type -->
+      <input type="month" /><br />
+      <input type="number" name="score" id="score" min="0" max="100" value="50" /><br>
+      <input id="vrange" type="range" min="0" max="100" value="1">
+
+
+      <input type="button" value="입력값 확인" id="btnRun" />
+    </form>
+    <p id="demo"></p>
+    <script>
+        var vrange = document.querySelector("#vrange");
+        
+        function init(){
+        	demo.innerHTML = "<span style='color : red;''>"+vrange.value+"</span>"
+        }
+        vrange.oninput = function(){
+            vrange.value;
+            demo.innerHTML = "<span style='color : red;''>"+vrange.value+"</span>"
+        }
+      document.querySelector("#btnRun").addEventListener("click", function () {
+        // alert("test");
+        var color = document.querySelector("#color");
+        var demo = document.querySelector("#demo");
+        var servey_start = document.querySelector("#servey_start");
+        var servey_end = document.querySelector("#servey_end");
+        // input의 모든 입력값은 value 속성값으로 얻어오거나 설정할 수 있다
+        var result = "";
+        result += "색깔 : " + color.value;
+        result += "설문 시작일 : " + servey_start.value;
+        result += "설문 종료일 : " + servey_end;
+        demo.color = color.value;
+        demo.innerHTML = result;
+      });
+    </script>
+  </body>
+</html>

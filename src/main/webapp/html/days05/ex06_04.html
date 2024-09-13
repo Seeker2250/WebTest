@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- 제출 버튼 클릭 - 자동으로 유효성 검사, 필수 입력 체크, 이메일 정규 표현식에 맞는지 체크 -->
+    <!-- 이거 자동으로 체크 안하게 만들기 -->
+    <!-- <form novalidate="novalidate"> -->
+    <form>
+        이메일 : <input type="email" name="email" id=""><br>
+        아이디   : <input type="text" id="uid" name="uid" value="hong" required="required"><br>
+        <input type="submit"><br>
+        <input type="submit" formnovalidate="novalidate"><br>
+    </form>
+    <hr>
+    <form action="ex100_ok.jsp" method="get" id="form1" target="_blank" enctype="application/x-www-form-urlencoded">
+        아이디   : <input type="text" id="uid" name="uid" value="hong"><br>
+        비밀번호 : <input type="password" id="pwd" name="pwd" value="1234"><br>
+        <input type="submit" formmethod="post"><br>
+        <input type="submit" formmethod="post" formaction="ex100_ok.jsp"><br>
+        <input type="submit" formenctype="multipart/form-data" formtarget="_self"><br>
+    </form>
+    이메일 : <input type="email" name="email" id="" form="form1">
+    <!-- form=("form태그 아이디") 하면 같이 서버로 넘어가 -->
+</body>
+</html>
+
+<!--
+GET에 대한 참고사항:
+
+이름/값 쌍으로 URL에 양식 데이터를 추가합니다.
+민감한 데이터를 보낼 때는 절대로 GET을 사용하지 마세요!(제출된 양식 데이터는 URL에서 볼 수 있습니다!)
+URL의 길이는 제한되어 있습니다(2048자)
+사용자가 결과를 북마크하려는 양식 제출에 유용합니다.
+GET은 Google의 쿼리 문자열과 같은 비보안 데이터에 적합합니다.
+POST에 대한 참고사항:
+
+HTTP 요청 본문 내부에 양식 데이터를 추가합니다(제출된 양식 데이터는 URL에 표시되지 않습니다)
+POST는 크기 제한이 없으므로 대량의 데이터(첨부파일)를 전송하는 데 사용할 수 있습니다.
+POST를 사용한 양식 제출은 북마크할 수 없습니다.
+
+암기) http://localhost/html/ex01.html 요청
+브라우저를 이용한 요청은 모두 GET방식 요청
+<a >도 GET
+location.href = 경로 이동도 GET방식
+form tag method를 GET으로 설정해도 GET방식
+
+form tag method를 POST로 설정하면 POST방식
+-->

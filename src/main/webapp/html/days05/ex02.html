@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        /* class = "team" 
+            ㄴ 클래스명은 대소문자 구분
+        id=""
+         ㄴ 아이디명도 대소문자 구분
+         ㄴ 아이디는 중간에 공백을 사용할 수 없다
+         ㄴ 숫자로 시작할 수 없다*/
+
+         .team1{
+            background-color: yellow;
+         }
+         .team2{
+            background-color: green;
+         }
+         li.teamleader{
+            color : red;
+         }
+    </style>
+  </head>
+  <body>
+    <div class="team1">
+      <ul>
+        <li class="teamleader">김준석</li>
+        <li>전재윤</li>
+        <li>박준용</li>
+        <li>송세호</li>
+        <li>이시훈</li>
+      </ul>
+    </div>
+    <div class="team2">
+      <ul>
+        <li class="teamleader">원충희</li>
+        <li>김선우</li>
+        <li>김재민</li>
+        <li>최사랑</li>
+        <li>김인경</li>
+      </ul>
+    </div>
+    <script>
+        var team2List = document.querySelectorAll(".team2 ul li");
+        // team2 안의 ul안의 li를 다 가져올거다
+        alert(team2List.length);
+        for (var i = 0; i < team2List.length; i++) {
+		    console.log(team2List[i].innerText);	
+            // li태그에 이벤트 처리
+            // team2List[i]가 li태그의 요소인 걸 확인했어
+            team2List[i].addEventListener("click", function(){
+                // console.log(this +"/"+ team2List[i]);
+                this.remove();
+            });
+        }
+    </script>
+  </body>
+</html>

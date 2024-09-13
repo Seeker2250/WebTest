@@ -18,8 +18,7 @@ var hide = document.getElementById("demo");<!DOCTYPE html>
       }
     </style>
     <script>
-      var btnSH = document.getElementById("btnSH");
-      var demo = document.getElementById("demo");
+      $(document).ready(function () {
 
       var sw = false;
 
@@ -35,6 +34,7 @@ var hide = document.getElementById("demo");<!DOCTYPE html>
         this.innerHTML = sw ? "숨기기" : "보이기";
         sw = !sw; 
       } //click
+    });
     </script>
   </head>
   <body>
