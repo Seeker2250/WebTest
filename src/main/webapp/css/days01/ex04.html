@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    * {
+        padding: 20px;
+    }
+
+    /* group selector --> */
+    h1, h2, h3, h4, h5, h6 {
+        border: solid 1px gray;
+    }
+
+    /* div tag안에 있는 모든 후손 자식, 
+    div안에 있는 a도, div 안의 p 안의 a도 다 적용 */
+    div a{
+        font-size: 40px;
+        color: black;
+    }
+
+
+    /* div 안에 있는 직계 자식만 적용 */
+    div > a{
+        font-size: 80px;
+        color: blue;
+    }
+
+
+    /* div 바로 뒤에 따라오는 p tag 딱 1개만 */
+    div + p{
+        background-color: red;
+    }
+
+
+    /* p 뒤에 따라오는 div tag 전부 */
+    p ~ div {
+        border-width: 10px;
+    }
+
+    div{
+        border: 1px solid red;
+    }
+</style>
+</head>
+
+  <body>
+<!-- 
+    css selector
+    1) 단순 선택자 : tag명, #id명, .class명, * universal selector, group selector -->
+    <!--
+    2) combinator 선택자 : element 간 특정 관계를 기반으로 하는 선택자
+    a 요소 요소 descendant selector
+    b 요소 > 요소 child selector
+    c 요소 + 요소 adjacent sibling selector
+    d 요소 ~ 요소 general sibling selector
+     -->
+
+    <a href="">Lorem.</a>
+    <a href="">Quasi!</a>
+    <a href="">Repellat.</a>
+
+    <!-- div>a*2>{XXX}^br+p>a>{YYY}^a -->
+     <!-- div a -->
+    <div>
+        <a href="">XXX</a>
+        <a href="">XXX</a>
+        <br>
+        <p>
+            222
+            <a href="">YYY</a>
+        </p>
+        <a href="">XXX</a>
+    </div>
+
+    <!-- p#p$.second*2>lorem1 -->
+    <p id="p1" class="second">Lorem.</p>
+    <p id="p2" class="second">Delectus?</p>
+
+    <div>Lorem.</div>
+    <div class="second">ZZZ</div>
+    <div>Aliquid?</div>
+  </body>
+</html>

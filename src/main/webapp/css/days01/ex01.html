@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    /* css 적용 방법
+    1) head tag 안에 style tag로 설정(internal) css
+        css selector
+        1. tag명
+        2. id명
+        3. class명 
+        
+        CSS Specificity 
+        동일한 element를 가리키는 style이 두 개 이상인 경우
+        특이성 값이 가장 높은 selector의 style 적용
+        같은 위상이라면 컴파일러가 가장 마지막으로 읽은 값
+        
+        Specificity  계산법
+        tag명 1점
+        #id명 100점
+        .class명 10점
+        Inline styles 1000점
+        *(asterisk) 0점*/
+
+        #first{
+            color: brown;
+        }
+        .asdf{
+            color: aqua;
+        }
+        p{
+            color: blue;
+            text-align: center;
+        }
+        #xx p#first .last{
+            /* specificity 점수 : 100 + 1 + 100 + 10 = 211점 */
+        }
+</style>
+</head>
+<body>
+
+    <!-- 우분투 22.04LTS
+     jdk 11
+     tomcat 9.x
+     oracle 11.g
+
+     Cascading Style Sheets
+
+     html로 화면 구성, css로 문서 스타일 지정
+     html elements가 화면에는 어떤가 인쇄되면 어떤가, 기타 미디어에 표시되는 방법 지정
+     여러 웹 페이지의 레이아웃을 한 번에 제어할 수 있다.
+     
+     css 구문
+        selector { == css selector
+            속성명:속성값;
+            속성명:속성값;
+            속성명:속성값;
+            }
+        html 단위 생략 : px
+        css는 단위 생략하면 안돼(값이 0이면 단위 생략 가능)
+     -->
+
+        <!-- p*2>lorem5^div*4>lorem4 -->
+        <p id="first" class="asdf">Lorem ipsum dolor sit amet.</p>
+        <p class="asdf">Mollitia quod aut architecto a?</p>
+
+        <!-- Inline CSS적용 
+             어떤 tag의 style 속성으로 style을 지정한 specificity : 1000점-->
+        <div style="color: navy;">Lorem ipsum dolor sit.</div>
+        <div>Quia sequi magnam nobis.</div>
+        <div>Quo ipsa sit distinctio.</div>
+        <div>Quos iusto magnam accusantium.</div>
+</body>
+</html>

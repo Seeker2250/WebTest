@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- html 멀티미디어 
+        - 웹 상에서 멀티미디어는 사운드, 음악, 비디오, 영화, 애니메이션 등을 말한다.
+        
+        - 웹 페이지에서 다양한 유형, 형식의 멀티미디어 요소(elements, tag)가 존재.
+        
+        - 최초의 웹 브라우저에서는 단일 색상의 텍스트만 지원(글꼴 제한)
+            ㄴ 추후에 글꼴, 색상, 이미지, 멀티미디어 등을 지원하는 브라우저가 출시
+        
+            - 멀티미디어 지원 파일 : .wav, .mp3, .mp4, .mpg, .wmv, .avi 지원
+        ( 참고 ) html 표준에서는 mp4, webm, ogg 비디오만 지원
+                 html 표준에서는 mp3, wav, ogg 오디오만 지원
+        
+                 - 웹 페이지에서 비디오를 표시하는 데에 사용되는 요소(태그) : <video>
+            ㄴ항상 너비, 높이 설정을 권장
+            ㄴ  비디오가 로딩되는 동안 깜빡일 수 있다.
+            ㄴ controls 속성을 지정 - 재생, 일시정지, 볼륨 등등의
+                비디오를 제어하는 속성
+            -->
+
+    <!-- html API -->
+    
+    <video src="movie.mp4" width="320" height="240" controls="controls"></video>
+    <hr>
+    <video src="mov_bbb.mp4" width="320" height="240" controls="controls"></video>
+    <hr>
+    <!-- src 속성 삭제하고 자식으로 source 요소 추가
+         웹 브라우저 종류 별로 video file이 재생되도록 설정
+         (이 멀티미디어 파일이 지원되지 않는다면 다음 source, 안된다면 다음 source ...) 
+         
+         chrome에서는 자동 재생을 허용하지 않아.
+         단, 음소거 된 자동 재생은 허용-->
+    <video width="320" height="240" autoplay="autoplay" muted="muted">
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        현재 브라우저는 비디오 파일을 지원하지 않아 재생할 수 없습니다.
+    </video>
+    <hr>
+    <audio controls autoplay muted>
+        <source src="horse.mp4" type="video/mpeg">
+        <source src="horse.ogg" type="video/ogg">
+        현재 브라우저는 비디오 파일을 지원하지 않아 재생할 수 없습니다.
+    </audio>
+</body>
+</html>

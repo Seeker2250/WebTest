@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: lightblue;
+      }
+      div{
+        border: 1px solid gray;
+        width: 200px;
+        padding: 10px;
+        background-color: rgba(0, 255, 0, 0.1);
+      }
+      div.first { /*11점*/
+        /* 투명도속성, 0~1 값 가져
+           자식 요소도 동일한 투명도를 상속받아*/
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .first>lorem3+div*4>lorem3 -->
+    <div class="first">Lorem, ipsum dolor.</div>
+    <div>Lorem, ipsum dolor.</div>
+    <div>Molestiae, commodi veritatis.</div>
+    <div>Consequuntur, fugiat culpa.</div>
+    <div>Impedit, tempora odio.</div>
+  </body>
+</html>

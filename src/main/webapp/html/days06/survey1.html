@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        #head_table{
+            
+            width: 100%;
+            height: 80px;
+            /* border: 1px solid rgb(202, 48, 48); */
+            border-collapse: collapse;
+            margin:0px ,15px;
+            table-layout: fixed;
+        }
+ 
+        .top_menu, .top_menu a{
+            vertical-align: top;
+            text-align: center;
+            text-decoration-line: none;
+           /* border: 1px solid black;*/
+            font-size: 15px;
+            color: black;
+            padding-top: 10px;
+            
+
+        }
+
+        #logo_img{
+            padding-left: 15px;
+            padding-top: 10px;
+            text-align: center;
+            width: 15%;
+            /*border: 1px solid black;*/
+            
+        }
+        
+
+
+        aside{
+            border: 10px solid rgb(143, 143, 143);
+            float: left;
+            width: 15%;
+            height: 600px;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        #login_window{
+            text-align: left;
+            width: 90%;
+            padding-left: 15px;
+        }
+  
+        #login_bt td{
+            /* border: 1px solid black; */
+            width: 20%;
+            
+        }
+        aside ul li, aside ul li a{
+            text-decoration-line: none ;
+            text-align: left;
+            margin-left: 5px;
+            margin-top: 20px;
+        }
+        aside ul{
+            margin-top: 70px;
+        }
+        aside a:visited {
+            color: black;
+        }
+
+
+        main{
+            float: left;
+            margin-top: 40px;
+            width: 80%;
+            margin-left: 20px;
+            height: auto;
+            min-height: 100%;
+            padding-bottom: 150px;
+
+        }
+        main table{
+            float: left;
+            margin: 5px;
+            border: 1px solid #ddd;
+            width: 45%;
+            height: 300px;
+        }
+
+        .main_head {
+            /* border: 1px solid black; */
+            width: 49%;
+            height: 20px;
+            vertical-align: top;
+            float: left;    
+            margin: 0px;
+            padding: 0px;
+        }
+        .brd_list{
+            list-style: none;
+            margin-bottom: 30px;
+            
+        }
+        .brd_list li {
+            height: 25px;
+            display: flex; /* flexbox 레이아웃 사용 */
+            justify-content: space-between; /* 양쪽 끝으로 정렬 */
+            padding-right: 10px;
+            margin-top: 15px;
+        }
+        .brd_list li a{
+            text-decoration-line: none;
+        }
+
+
+        #survey input{
+            margin-top: 10px;
+        }
+        body{
+            margin: 0px;
+            
+        }
+
+        footer{
+            height: 5%;
+            width: 100%;
+            text-align: center;
+            background-color: #ddd;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <table id="head_table">
+            
+            <tr>
+                <td rowspan="2" id="logo_img"><a href="#">
+                    <img src="" alt="사이트 로고 사진"></a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="top_menu"><a href="#"><b>Home</b></a></td>
+                <td class="top_menu"><a href="#"><b>공지사항</b></a></td>
+                <td class="top_menu"><a href="#"><b>자유게시판</b></a></td>
+                <td class="top_menu"><a href="#"><b>자료실</b></a></td>
+                <td class="top_menu"><a href="#"><b>설문조사</b></a></td>
+                <td class="top_menu"><a href="#"><b>회원가입</b></a></td>
+                <td class="top_menu"><a href="#"><b>로그인</b></a></td>
+            
+            </tr>
+        </table> 
+
+ 
+    </header>
+    
+
+    <!-- 사이드창 -->
+    <aside>
+            <h3 style="margin: 10px;">LOG IN</h3>
+
+                <form action="" method="get">
+                    <table id="login_window">
+                        <tr>
+                        <td style="width:5px;"><label for="id">ID</label></td>
+                        <td><input type="text" id="id" style="width: 100%;"></td>
+                        </tr>
+                        <tr>
+                        <td><label for="pw">PW</label></td>
+                        <td><input type="password" id="pw" style="width: 100%;"></td>
+                        </tr>    
+                    </table>
+                    <br>
+                    <table id="login_bt">
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="로그인"></td>
+                            <td><button><a href="#" style="text-decoration-line: none; text-decoration: none;">회원가입</a></button></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </form>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">자유게시판</a></li>
+                    <li><a href="#">자료실</a></li>
+                    <li><a href="#">설문조사</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">로그인</a></li>
+                </ul>
+
+    </aside>
+    
+    <!-- 메인 -->
+    
+    <main>
+        <span style="margin-top: 20px;"><b>※ Home</b></span><br><br>
+        <table>
+            <tr>
+                <td class="main_head" ><img src="" alt="공지"><b style="font-size: larger;">공지사항</b></td>
+                <td class="main_head" style="text-align: right;""><a href=""><img src="" alt="more"></a></td>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="brd_list">
+                        <li><a href="">공지사항입니다1</a> <a href="">작성자1</a></li>
+                        <li><a href="">공지사항입니다2</a> <a href="">작성자2</a></li>
+                        <li><a href="">공지사항입니다3</a> <a href="">작성자3</a></li>
+                        <li><a href="">공지사항입니다4</a> <a href="">작성자4</a></li>
+                        <li><a href="">공지사항입니다5</a> <a href="">작성자5</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class="main_head" ><img src="" alt="자유"><b style="font-size: larger;">자유게시판</b></td>
+                <td class="main_head" style="text-align: right;"><a href=""><img src="" alt="more"></a></td>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="brd_list">
+                        <li><a href="">자유게시판입니다1</a> <a href="">작성자1</a></li>
+                        <li><a href="">자유게시판입니다2</a> <a href="">작성자2</a></li>
+                        <li><a href="">자유게시판입니다3</a> <a href="">작성자3</a></li>
+                        <li><a href="">자유게시판입니다4</a> <a href="">작성자4</a></li>
+                        <li><a href="">자유게시판입니다5</a> <a href="">작성자5</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td class="main_head"><img src="" alt="자료"><b style="font-size: larger;">자료실</b></td>
+                <td class="main_head" style="text-align: right;"><a href=""><img src="" alt="more"></a></td>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="brd_list">
+                        <li><a href="">자료실입니다1</a> <a href="">작성자1</a></li>
+                        <li><a href="">자료실입니다2</a> <a href="">작성자2</a></li>
+                        <li><a href="">자료실입니다3</a> <a href="">작성자3</a></li>
+                        <li><a href="">자료실입니다4</a> <a href="">작성자4</a></li>
+                        <li><a href="">자료실입니다5</a> <a href="">작성자5</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <table id="survey">
+            <tr>
+                <td class="main_head"><img src="" alt="설문"><b style="font-size: larger;">설문조사</b></td>
+                <td class="main_head" style="text-align: right;"><a href=""><img src="" alt="more"></a></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><b>&nbsp; Q.평균 수면 시간은 ?</b></p>
+                    
+                    <form action="" method="get">
+                    <table  style="width: 100%; height: 30px; border: none;">
+                    <tr>
+                        <td style="vertical-align: top; width: 15px;">
+                            &nbsp;A.
+                        </td>
+                        <td style="vertical-align: top;">
+                        <input type="radio" name="answer" class="nums" id="num1"><label for="num1">3 ~ 4 시간</label><br>
+                        <input type="radio" name="answer" class="nums" id="num2"><label for="num2">4 ~ 6 시간</label><br>
+                        <input type="radio" name="answer" class="nums" id="num3"><label for="num3">6 ~ 8 시간</label><br>
+                        <input type="radio" name="answer" class="nums" id="num4"><label for="num4">8 ~ 10 시간</label><br>
+                        <div style="text-align: right;">
+                        <input type="submit" value="투표하기">
+                        <input type="button" value="결과보기">
+                        </div>
+                    </form>    
+                        </td>    
+                    </tr>
+
+                    </table>
+                </td>
+                
+            </tr>
+            <tr>
+                <div style="height: 200px;"></div>
+            </tr>
+        </table>
+
+    </main>
+
+
+    <!-- clear float -->
+    <div style="clear: both;"></div>
+    
+    <footer>
+    
+        <div>Footer</div>
+    </footer>
+
+</body>
+</html>

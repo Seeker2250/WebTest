@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      img {
+        opacity: 0.5;
+      }
+      img:hover {
+        opacity: 1; /*불투명*/
+      }
+
+      div {
+        background-color: rgb(4, 170, 109);
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- css 투명도와 관련된 속성
+         opacity : 0.0(완전 투명) ~ 1.0(완전 불투명)
+            ㄴ 자식에게도 투명도가 상속 돼
+            
+         rgba -->
+    <img src="../images/img_forest.jpg" alt="" width="170" height="100" />
+    <img src="../images/img_mountains.jpg" alt="" width="170" height="100" />
+    <img src="../images/img_5terre.jpg" alt="" width="170" height="100" />
+
+    <hr />
+    <!-- div*4[class][style=opacity:0.$]>p{opacity 0.$} -->
+    <div class="" style="opacity: 0.1">
+      <p>opacity:0.1</p>
+    </div>
+    <div class="" style="opacity: 0.3">
+      <p>opacity:0.3</p>
+    </div>
+    <div class="" style="opacity: 0.6">
+      <p>opacity:0.6</p>
+    </div>
+    <div class="" style="opacity: 1">
+      <p>opacity:1.0(default)</p>
+    </div>
+
+
+
+    <hr />
+    <!-- Inline Style로 하면  p tag는 opacity를 inherit하지 않아. -->
+    <div class="" style="background-color: rgba(4, 170, 109, 0.1)">
+      <p>opacity:0.1</p>
+    </div>
+    <div class="" style="background-color: rgba(4, 170, 109, 0.3)">
+      <p>opacity:0.3</p>
+    </div>
+    <div class="" style="background-color: rgba(4, 170, 109, 0.6)">
+      <p>opacity:0.6</p>
+    </div>
+    <div class="" style="background-color: rgba(4, 170, 109, 1)">
+      <p>opacity:1.0(default)</p>
+    </div>
+  </body>
+</html>

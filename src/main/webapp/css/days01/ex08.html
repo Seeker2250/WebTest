@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+        border: 1px solid red;
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        border: 1px solid black;
+        /* margin-top: 50px;
+        margin-right: 75px;
+        margin-bottom: 100px;
+        margin-left: 150px; */
+        /* margin: 50px 75px 100px 150px; */
+
+        /*margin이 top 50, bottom 50이면 사이에는 100px 공간 있어야 하는 거 아니야?->아니야
+        50px만 띄워져! 둘 중에 더 큰 값만 적용돼
+        if) top margin이 75, bottom margin 25라면 75만 적용*/
+
+       /* margin: 50px 100px 200px 100px;
+       right left가 같다면 */
+       /* margin: 50px 100px 200px; */
+
+        /* margin: 50px 100px; */
+        /* margin을 auto로 준다 : 브라우저가 여백을 자동 계산 */
+        
+        /* 가운데 정렬을 하고 싶다면 */
+        /* margin: 0, auto; */
+
+        /* %로 준다면, parents elements의 width의 %로 지정 */
+        /* margin: 20%; */
+    }
+    div.demo{
+        border: 1px solid green;
+        width: 300px;
+        margin: 0 auto;
+        
+        /* 단어 하나가 끊어지지 않아서
+           한 줄의 빈 공간에 안 들어가면
+           그냥 밑으로 내려버려 
+           그걸 막아주는 게 justify,
+           한 단어마다의 공백이 더 넓어져*/
+        text-align: justify;
+    }
+</style>
+</head>
+<body>
+    <!-- div*3>lorem -->
+<div class="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt unde nisi cupiditate consequuntur quam officia iste deleniti voluptatum mollitia rem eum consectetur magni impedit molestiae voluptatem quia earum. Dolore hic!</div>
+<div>Accusantium culpa fuga quaerat deleniti saepe adipisci eaque earum animi atque repellat quia nesciunt sed molestias aliquam incidunt impedit quos nobis harum cum cupiditate. Cum quibusdam maiores assumenda enim dolorum.</div>
+<div>Debitis odio itaque numquam soluta cum expedita temporibus voluptate ex corporis cupiditate! Quos totam aliquam deleniti fugit accusantium voluptates laboriosam veritatis ipsa consectetur unde nesciunt rem quo minima sit cumque!</div>
+
+<!-- 
+    margin(바깥 여백)
+    테두리의 외부 요소 주위 공간
+    테두리(border) :
+    padding
+    
+-->
+</body>
+</html>

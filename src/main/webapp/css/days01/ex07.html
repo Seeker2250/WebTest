@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        p {
+            border: 2px solid 121212;
+            padding: 10px;
+        }
+        h3{
+            /* border-style: solid dotted; /*top bottom / right left */
+            /* border-width: 10px 20px 30px 40px; /*top right bottom left */
+            border-left: 10px solid green;
+            border-bottom: 1px dotted gray;/*이렇게 따로 줄 수도?*/
+        }
+    </style>
+    <style>
+        p#demo{/*101점*/
+            /* border-top-style: dotted;
+            border-right-style: solid;
+            border-bottom-style: dashed;
+            border-left-style: double; */
+
+            border-style: dotted solid dashed double;
+            border: 2px solid red;
+            padding: 10px;
+            /* 둥근 테두리~ */
+            border-radius: 10px 20px 30px 40px; /* ┌ ┐ ┘ └ 순서야*/
+            border-radius: 10px 40px;/*┌ ┘ / ┐└ */
+            border-radius: 10px; 
+        }
+    </style>
+  </head>
+  <body>
+    <!-- p#demo>lorem10 -->
+    <p id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, inventore?</p>
+    <h3>css border</h3>
+    <!-- css border
+     border-width : 1px;
+     border-style : solid; 이거 필수 속성(없으면 width랑 color는 소용없어.)
+     border-color : red; 
+     border 1px solid red;
+     border solid 1px red;-->
+
+    <p style="border-style: none">테두리 X</p>
+    <p style="border-style: hidden">숨겨진테두리</p>
+    <p style="border-style: dotted; border-width: 1px">점선테두리</p>
+    <p style="border-style: dashed; border-width: thick">대시테두리</p>
+    <p style="border-style: solid">실선테두리</p>
+    <p style="border-style: double">이중테두리</p>
+    <p style="border-style: groove">3D테두리</p>
+    <p style="border-style: ridge">3D 융기된 테두리</p>
+    <p style="border-style: inset">3D 삽입된 테두리</p>
+    <p style="border-style: outset">3D 아웃셋 테두리</p>
+  </body>
+</html>

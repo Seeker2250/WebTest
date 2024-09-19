@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- html plugin
+     - 웹 브라우저 표준 기능 지원 X + 확장
+     
+     - 다양한 목적, 이유로 지원
+        ㄴ 예전에 은행 업무 볼 때 Active X Control 같은 것(사용 지양)
+        ㄴ 바이러스 검사
+        ㄴ 예전에 Java 애플릿 실행(이제 지원 거의 안함)
+        ㄴ 예전에 플래시 동영상 실행(이제 지원 거의 안함)
+        ㄴ 지도 표시 등
+
+     - <object>
+            ㄴ 모든 브라우저에서 지원하는 tag
+       <embed>
+            ㄴ 모든 브라우저에서 지원하는 tag, 닫기 tag가 없음.
+            ㄴ html 문서 내에 포함된 객체를 정의
+            ㄴ html5에서 지원하지 않아.
+            -->
+            
+
+        <!-- html 문서 내에 포함된 객체를 정의하는 태그 : object tag
+             웹 페이지에 플러그인(java applet, pdf reader, flash player 등) 내장하도록 설계되었지만
+             html 문서 내에 html 문서를 포함하는 데에도 사용할 수 있다. -->
+        <object width="100%" height="500px" data="ex01.html">asdf</object>
+        <hr>
+        <!-- 원하는 이미지도 처리 -->
+         <object data="audi.jpeg"></object>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+table{
+	width: 100%;
+	border-top: 5px solid black;
+}
+table, th, td{
+	/* border: 1px solid black; */
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+<div class="vote">
+    <h2>설문 작성</h2>
+    <form>
+        <table>
+            <tr>
+                <td style="text-align: center;">질문</td>
+                <td><input type="text" autofocus="autofocus" tabindex="1" placeholder="가장 좋아하는 여자 연예인은?"></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">시작일</td>
+                <!-- 
+                <td>
+	                <input type="text" id="year" name="year" pattern="\d{4}" placeholder="YYYY" required>년
+	        		<input type="text" id="month" name="month" pattern="0[1-9]|1[0-2]" placeholder="MM" required>월
+	        		<input type="text" id="day" name="day" pattern="0[1-9]|[12][0-9]|3[01]" placeholder="DD" required>일
+                </td>
+                 -->
+                <td><input type="date" id="start" tabindex="2"></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">종료일</td>
+                <!-- 
+                <td>
+	                <input type="text" id="year" name="year" pattern="\d{4}" placeholder="YYYY" required>년
+	        		<input type="text" id="month" name="month" pattern="0[1-9]|1[0-2]" placeholder="MM" required>월
+	        		<input type="text" id="day" name="day" pattern="0[1-9]|[12][0-9]|3[01]" placeholder="DD" required>일
+                </td>
+                 -->
+                <td><input type="date" id="end" tabindex="3"></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">항목수</td>
+                <td>
+	                <input list="count" required="required" tabindex="4">
+					<datalist id="count">
+						<option value="1개">
+						<option value="2개">
+						<option value="3개">
+						<option value="4개">
+						<option value="5개">
+					</datalist>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" rowspan="5">항목</td>
+                <td>
+	                <label for="vote1">1: </label>
+	                <input type="text" id="vote1" name="vote1" tabindex="5" placeholder="배슬기">
+                </td>
+            </tr>
+            <tr>
+                <td>
+	                <label for="vote2">2: </label>
+	                <input type="text" id="vote2" name="vote2" tabindex="6" placeholder="김옥빈">
+                </td>
+            </tr>
+            <tr>
+                <td>
+	                <label for="vote3">3: </label>
+	                <input type="text" id="vote3" name="vote3" tabindex="7" placeholder="아이비 꺄~~~~~~ 사. 랑. 해. 요. 아. 이. 비.">
+                </td>
+            </tr>
+            <tr>
+                <td>
+	                <label for="vote4">4: </label>
+	                <input type="text" id="vote4" name="vote4" tabindex="8" placeholder="한효주">
+                </td>
+            </tr>
+            <tr>
+                <td>
+	                <label for="vote5">5: </label>
+	                <input type="text" id="vote5" name="vote5" tabindex="9" placeholder="김선아">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div class="button" style="text-align: right;">
+            <button type="submit">확인</button>
+            <button type="reset">취소</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
