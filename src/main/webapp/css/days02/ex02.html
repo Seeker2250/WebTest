@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div {
+        background-color: lightblue;
+        width: 500px; /*스크롤바 생김*/
+        /* max-width하면 진짜 그냥 최대값이라 스크롤바 안 생겨 */
+        /* width랑 height는 min, max값 존재 */
+        /* 값이 max보다 크게 하면 적용 안돼 */
+        height: 100px;
+
+        
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    width, height에는 padding, border, margin이 포함되지 않기에 별도로 계산할 것
+    width, height에 auto 주면 browser가 rendering할 때 알아서 계산 및 설정해줘
+    length 단위 : px, pt, % 등등
+    inherit 하면 부모 값 상속 받아~ -->
+    <div>Lorem ipsum dolor sit amet.</div>
+  </body>
+</html>

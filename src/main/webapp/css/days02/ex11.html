@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #panel,
+      .flip {
+        background-color: #4acf50;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        border: 1px solid #a6d8a8;
+        margin: auto;
+      }
+
+      #panel {
+        display: none;
+      }
+
+      .flip:hover {
+        cursor: pointer;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- p.fil{Click to show panel} -->
+    <p class="flip">Click to show panel</p>
+
+    <div id="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident,
+        voluptas. Doloremque consequatur dignissimos vero maiores. Pariatur
+        debitis, rem molestias nemo iste nesciunt neque, id adipisci aperiam
+        beatae ipsum accusamus quibusdam.
+      </p>
+      <p>
+        Ipsum nobis officia a earum voluptates eos suscipit quisquam minus
+        repellat! Voluptatum debitis, error velit ea nam consequatur
+        necessitatibus reprehenderit pariatur, voluptatibus deserunt ducimus in
+        a excepturi. Perspiciatis, amet magni.
+      </p>
+      <p>
+        Aliquam error repellendus totam eos dolor neque iure nostrum enim
+        ratione ab veritatis, quasi dicta! Laudantium veniam soluta et provident
+        iure asperiores minima natus, eaque laborum incidunt delectus, accusamus
+        omnis.
+      </p>
+    </div>
+
+    <script>
+        const flip = document.querySelector("p.flip");
+        const pannel = document.querySelector("div#panel");
+
+        let sw = true;
+        flip.addEventListener("click",function(){
+            if(sw){
+                pannel.style.display="block";
+            }else{
+                pannel.style.display="none";
+            }
+            sw = !sw;
+            
+        });
+    </script>
+  </body>
+</html>

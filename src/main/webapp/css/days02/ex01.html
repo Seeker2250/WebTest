@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    div{
+        border: 1px solid black;
+        background: lightblue;
+
+        /* padding-top: 50px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 80px; */
+        /* padding: 50px 30px 50px 80px; */
+
+
+        /*padding: 50px 80px 30px;*/ /*top / left&right / bottom*/
+    }
+    .demo{
+        width: 200px;
+    }
+    /* div.demo.second{*/
+        /* specificity : 1 + 10 + 10 */
+    /*     color: white;
+    } */
+
+    /* pseudo class nth-child */
+    /* div:nth-child(2){
+        color:red;
+    } */
+
+
+    /*
+    nth-child(3)과 :nth-of-type(3)차이점
+    nth-child는 마지막 자식요소(body의 자식 중 nth)
+    nth-of-type는 해당 요소 중 마지막(div중 nth)
+    */
+
+    /* div:nth-of-type(3){ 
+        color: blue;
+    } */
+
+    div:last-of-type{
+        color: green;
+        border: 10px solid red;
+        box-sizing: border-box;/*padding이나 border를 주더라도 width 고정*/
+    }
+    * {
+        box-sizing: border-box; /*1~2px 차이 잡아주기*/
+    }
+</style>
+</head>
+<body>
+    <!-- 
+        padding
+        border의 안쪽 여백
+        border와 contents 사이의 간격
+        padding-top/right/bottom/left
+
+        px pt cm % inherit 등등
+    -->
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad ut nemo, quisquam excepturi quasi veritatis porro consequatur itaque aliquid, asperiores assumenda. Exercitationem, nam ducimus voluptates alias quasi rem quos dolor!</div>
+
+    <div class="demo">Lorem ipsum dolor sit amet.</div>
+    <div class="demo second">Lorem ipsum dolor sit amet.</div>
+    <p>XXX</p>
+</body>
+</html>

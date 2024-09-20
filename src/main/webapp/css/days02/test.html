@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>점심메뉴를 골라보자~</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #menu {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: pink;
+        }
+        h1{
+            color: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>랜덤 점심메뉴 뽑기</h1>
+    <button onclick="pickRandomMenu()">메뉴 뽑기</button>
+
+    <div id="menu"></div>
+
+    <script>
+        // 점심 메뉴 리스트
+        const lunchMenus = [
+            "삼미미",
+            "햄버거",
+            "국밥",
+            "샐러드",
+            "푸드코트",
+            "서브웨이"
+        ];
+
+        // 랜덤 메뉴 선택 함수
+        function pickRandomMenu() {
+            const randomIndex = Math.floor(Math.random() * lunchMenus.length);
+            const randomMenu = lunchMenus[randomIndex];
+            document.getElementById("menu").innerText = `오늘의 메뉴: ${randomMenu} 당첨!`;
+        }
+    </script>
+</body>
+
+</html>
