@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    div{
+        border: 3px solid #4caf50;
+        padding: 5px;
+    }
+    div>img.img1{
+        float: left;/*img와 text를 정렬하기 위해 줬을텐데 overflow가 나와버렸어.*/
+        /* 이건 이제 div랑 별개야. float해서 z축으로 떠다니잖아 */
+    }
+
+    /*
+    clearfix 방법 1)
+    .clearfix{
+        overflow: auto;
+    }
+    */
+
+    /* 대부분의 browser에서 처리하는 안전한 방법 */
+    /* :는 pseudo-class, ::는 pseudo-element */
+    .clearfix::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+</head>
+<body>
+<!-- 
+    clearfix hack
+    float element가 포함하고 있는 container element보다 크면
+    container 외부에 overflow가 발생해
+    이걸 해결하는 방법
+-->
+
+<div class="clearfix">
+    <img class="img1" src="../images/pineapple.jpg" alt=""
+    width=170 height="170"/>
+     Aspernatur eos magni nisi explicabo eaque voluptatem optio nemo aliquid odit illo pariatur voluptate molestias dicta earum omnis quam voluptates quia facilis.
+  </div>
+  
+</body>
+</html>

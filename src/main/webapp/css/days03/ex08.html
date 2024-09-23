@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    p{
+        background-color: yellow;
+        padding: 20px;
+
+        display: none;
+    }
+    /*div:hover p{*/
+        /*div tag에 hovering 일어날 때 그 child인 p tag를 display를 block으로*/
+        /*display: block;
+    }*/
+    
+</style>
+</head>
+<body>
+<!-- 
+    pseudo class
+        ㄴ element의 특정 상태 정의
+        hover
+        focus
+    pseudo element
+        ㄴ element의 지정된 부분에 스타일을 지정
+        ㄴ 첫 글자
+           첫 라인
+           element 내용 앞 / 뒤에 추가 등
+-->
+<div>
+    Lorem ipsum dolor sit amet, 
+    consectetur adipisicing elit.
+    Deleniti earum.
+    <p>
+      --- Lorem ipsum dolor.
+    </p>
+  </div>
+  <script>
+    // div element에 hovering 일어나면 p child tag 보이게
+    //                        아니면             안보이게
+    // onMouseOver
+    // onMouseOut
+
+    // JS로
+    // const div = document.querySelector("div");
+    // const p = document.querySelector("div > p");
+    // div.onmouseover = function(){
+    //     p.style.display = "block";
+    // };
+    // div.onmouseout = function(){
+    //     p.style.display = "none";
+    // };
+
+
+    // JQuery로
+    // const div = $("div");
+    // const p = $("div > p");
+    // div.on("mouseover", function(){
+    //     p.show();
+    // });
+    // div.on("mouseout", function(){
+    //     p.hide();   
+    // });
+
+
+    // JQuery 다른 버전
+    // $("div").hover(
+    //     function(){//mouseover
+    //         $("div > p").show();
+    //     },
+    //     function(){//mouseout
+    //         $("div >p").hide();
+    //     }
+    // );
+
+    
+    // JQuery 다른 버전
+    // $("div").hover(function(){
+    //     $("div > p").toggle();
+    // });
+  </script>
+</body>
+</html>

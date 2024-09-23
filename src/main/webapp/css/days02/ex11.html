@@ -71,6 +71,146 @@
             sw = !sw;
             
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const fliptest = document.querySelector("p.flip");
+        const panneltest = document.querySelector("div#panel");
+        let sw2 = true;
+        fliptest.addEventListener("click",function(){
+          if(sw2==true){
+            paneltest.style.display="none";
+          }else{
+            paneltest.style.display="block";
+          }
+        });
+
+
+
+
+
+
+
+
+        
+        $("p.flip").on("click",function(){
+          if(sw2){
+            $("div#panel").show();
+          }else{
+            $("div#panel").hide();
+          }
+        });
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const abc = document.querySelector("filp");
+        const def = document.getElementsByClassName("panel");
+        let sw3 = true;
+        abc.addEventListener("click", function(){
+        if(sw3){
+          abc.style.display=""
+        }else{
+
+        }
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      $("p.flip").on("click", function(){
+        $("#div.panel").show();
+        $("#div.panel").hide();
+      });
+
+      $("p.flip").on("click", function () {
+        $("div.panel").hide();  //모두 숨겨
+        $(this).next().slideToggle();
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
   </body>
 </html>

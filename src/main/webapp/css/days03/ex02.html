@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        /*
+        1. div는 block
+        2. height 속성 지정
+         */
+         div{
+            background-color: coral;
+            border: 1px solid;
+            width: 300px;
+            height: 65px;
+            /* overflow: auto; */
+            overflow-x: hidden;
+            overflow-y: auto;
+         }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        overflow
+            element의 contents가 너무 커서 지정된 영역에 맞지 않을 때
+            이 내용을 어떻게 처리할 지를 지정하는 속성
+            ㄴvisible( default ) : 넘치더라도 그냥 냅둔다
+            ㄴscroll : 넘치든지 아니든지 그냥 scroll bar 추가
+            ㄴauto : 넘칠 때'만' scroll bar 추가
+            (주의) 높이가 지정된 block element에만 적용할 수 있는 속성.
+    -->
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi earum
+      dolore possimus repellendus eos veritatis ut. Debitis architecto corporis
+      error eum repudiandae dolorem ea perferendis assumenda id? Et ex
+      explicabo.
+    </div>
+    <br />
+    <div>Lorem ipsum dolor sit amet.</div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .box{
+        border: 1px solid gray;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+    }
+
+    div:nth-of-type(1){
+    /*script tag도 body의 자식일 수 있기 때문에 nth-child(n)은 주의할 것.*/
+        background-color: red;
+        position: static;/*default, 항상 페이지의 일반적인 흐름(inline, block)에 따라 위치 지정.*/
+    }
+    div:nth-of-type(2){
+        background-color: yellow;
+        position: relative;/*relative coordinate, 기준은 원래 그려져야 하는 위치*/
+        left: 10px;
+        top: 10px;
+    }
+    div:nth-of-type(3){
+        background-color: green;
+        position: fixed;/*scoll 있어도 고정*/
+        right:10px;/*오른쪽 기준 10px 띄워*/
+        bottom: 10px;/*아래 기준 10px 띄워*/
+        
+    }
+    div:nth-of-type(4){
+        background-color: green;
+        position: absolute;
+        /* 가장 가까운 위치의 조상 기준으로 하는 좌표 */
+        left:100px;/*오른쪽 기준 10px 띄워*/
+        top: 10px;/*아래 기준 10px 띄워*/
+        z-index: -1;/*index값이 클수록 위로 올라가*/
+    }
+</style>
+</head>
+<body>
+
+<!-- <div class="box">Box - 1</div> -->
+ <script>
+    // js loop를 통해 div 5개 동적 생성 및 position 속성
+    for (let i = 0; i < 5 ; i++) {
+        const divTest = document.createElement("div");
+        // divTest.innerHTML = "Box - " + i;
+        divTest.innerHTML = `Box - ${i}`;
+        divTest.className = "box";
+        document.body.appendChild(divTest);
+    }
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        span.fa{
+            font-size: 25px;
+        }
+        span.checked{
+            color: orange;
+        }
+    </style>
+  </head>
+  <body>
+    <span class="heading">상품 평점 : </span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <script>
+        let n = Math.floor(1+Math.random() * 5);
+        /*document.querySelector("span.heading").innerText = `상품 평점(${n})`;
+        const spanList = document.querySelectorAll("span.fa.fa-star");
+        // alert(spanList.length);
+        for (let i = 0; i < n; i++) {
+            // document.getElementsByClassName("fa fa-star")[i].classList.add("checked");
+            spanList[i].classList.add("checked");
+        }*/
+        
+        
+        // const spanAll = document.getElementsByClassName("fa-star")
+        // alert(spanAll.length);
+
+        $("span.fa.fa-star").each(function(i, element){
+            if(i<n) $(element).addClass("checked");
+        });
+
+        $("span.heading").text(`상품 평점(${n})`);
+        // for (let i = 0; i < n; i++) {
+            // $(".fa.fa-star").eq(i).addClass("checked");
+        // }
+    </script>
+  </body>
+</html>

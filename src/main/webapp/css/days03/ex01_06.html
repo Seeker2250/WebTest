@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    img{
+        width: 100%;
+        height: auto;
+        opacity: 0.3;
+    }
+    .container{
+        position: relative;
+    }
+    .container > div{
+        position: absolute;/*block이 깨지고 inline처럼 이동해*/
+        font-size: 18px;
+    }
+    .topleft{
+        left: 20px;
+        top: 20px;
+    }
+    .topright{
+        right: 20px;
+        top: 20px;
+    }
+    .bottomleft{
+        left: 20px;
+        bottom: 20px;
+    }
+    .bottomright{
+        right: 20px;
+        bottom: 20px;
+    }
+    .center{
+        top: 50%;
+        background-color: red;
+        width: 100%;/*inline처럼 됐으니까 다시 block처럼 만들어*/
+        text-align: center;/*좌상단 꼭짓점이 가운데로 온 셈이라 '정확한 center'는 아니야*/
+    }
+</style>
+</head>
+<body>
+    <!-- 
+        position
+        img, video 위에 출력
+    -->
+    <div class="container">
+        <img src="../images/img_5terre_wide.jpg" alt=""
+        width="1000" height="300" />
+        <div class="topleft">Top Left</div>
+        <div class="topright">Top Right</div>
+        <div class="bottomleft">Bottom Left</div>
+        <div class="bottomright">Bottom Right</div>
+        <div class="center">Center</div>
+     </div>
+</body>
+</html>

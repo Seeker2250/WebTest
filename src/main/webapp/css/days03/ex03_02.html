@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .box1{
+        border: 3px solid #73ad21;
+        padding: 10px;
+
+        float: left;/*block tag여서 생기는 width 100%는 의미가 없어져*/
+    }
+    .box2{
+        border: 3px solid red;
+        padding: 10px;
+        clear: left;
+        /*clear
+
+          float element 옆에 있는 element에게 뭘 할 지 지정
+          float 속성에 영향을 받아서 왼쪽, 오른쪽의 속성 적용
+          left, right, both, intheritm nont(default)
+
+          float 방향과 clear방향이 일치해야 옆 element가 float 영향을 안 받아
+          */
+    }
+</style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis nostrum animi dolor veniam culpa explicabo quasi magnam tempore neque iste sit saepe vel optio illo voluptates sapiente facilis consequuntur.</div>
+</body>
+</html>
