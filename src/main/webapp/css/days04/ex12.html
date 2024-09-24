@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+        transform: rotate(-45deg) translate(100px, 50px) scale(0.5, 2) skew(30deg, 10deg); 
+        /* transform: scaleX(0.5); */
+        /* transform: scaleY(2); */
+        /* scaleX, scaleY, skewX, skewY, translateX, translateY */
+        transform: matrix(1, -0.3, 0, 1, 0, 0);
+     
+     
+      }
+    </style>
+  </head>
+  <body>
+
+    <pre>
+    css 변환을 사용하면 element를 이동, 크기 변경, 회전, 뒤집기 등의 변환을 할 수 있다
+    css 2d변환
+    transform 속성 == 변환
+     : 이동 translate, 크기 scale, 회전 rotate(양수 : 시계방향, 음수 : 반시계방향), 뒤집기 skew(양수 : 시계방향, 음수 : 반시계방향)
+     기울기 skewX, skewY
+    
+     약식 : matrix(scaleX, skewY, skewX, scaleY, translateX, translateY)
+
+    transform-origin 속성 == 변환 원점
+    
+    css 3d변환
+    transform-style 속성 == 변환 스타일
+     : 3d 변환 스타일 적용 여부 지정
+    perspective 속성 == 원근감
+     : 3d 변환 원근감 적용 여부 지정
+    </pre>
+
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias impedit
+      rerum quas minus eius perferendis reprehenderit eveniet
+    </div>
+  </body>
+</html>

@@ -141,13 +141,9 @@
       // 그 값 만큼 그래프 형성
       // 0.0 <= Math.random() < 1.0
       // 0<= Math.random() < 100
-
-      /*let n = Math.floor(Math.random() * 101);
-      console.log(n);*/
-
+      let n = Math.floor(Math.random() * 101);
+      console.log(n);
       // body > div:nth-child(2) > div.side.right > div
-
-      /*
       const star1ValueDiv = document.querySelector(
         "body > div:nth-child(2) > div.side.right > div"
       );
@@ -155,13 +151,7 @@
 
       const bar1 = document.querySelector(".bar-1");
       bar1.style.width = n + "%";
-      */
 
-      let n = Math.floor(Math.random() * 101);
-      const star1ValueDiv = $("body > div:nth-child(2) > div.side.right > div");
-      star1ValueDiv.text(n);
-      const bar1 = $(".bar-1");
-      bar1.css("width", n + "%");
       
     </script>
   </body>

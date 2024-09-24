@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      button {
+        background-color: red;
+        display: inline-block;
+        padding: 5px;
+        border: none;
+        color: white;
+
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 롤오버 효과 -->
+    <button type="button">롤오버</button>
+    <button>롤오버</button>
+    <button>롤오버</button>
+    <script>
+      const btns = document.querySelectorAll("button");
+
+      // btns는 node list인데 여기에 event를 걸으니 안되지 element에 걸어야지
+      // btns.onmouseover = function(){
+      //     console.log("이벤트 확인");
+      // };
+
+      //   for (let index = 0; index < btns.length; index++) {
+      //     btns[index].onmouseover = function () {
+      //       console.log(this); //이벤트가 발생한 버튼 요소
+      //       this.style.backgroundColor = "blue";
+      //     };
+      //     btns[index].onmouseout = function () {
+      //       event.srcElement.style.backgroundColor = "red";
+      //     };
+      //   }
+
+    //   $("button")
+    //     .on("mouseover", function () {
+    //       $(this).css("background-color", "blue");
+    //     })
+    //     .on("mouseout", function () {
+    //       $(this).css("background-color", "red");
+    //     });
+
+      $("button").hover(
+        function () {
+          $(this).css("background-color", "blue");
+          console.log(this);
+        },
+        function () {
+          $(this).css("background-color", "red");
+          console.log(this);
+        }
+      );
+    </script>
+  </body>
+</html>

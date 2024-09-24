@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    @font-face{
+        font-family: myFirstFont;
+        <!-- 
+        url은 항상 소문자를 사용 
+        -->
+        src: url(./images/sansation_bold.woff);
+    }
+    <style>
+        *{
+            font-family: myFirstFont;
+        }
+    </style>
+  </head>
+  <body>
+    <!--
+    images folder 안에
+    ~~~.woff 파일
+    
+    client에 설치되지 않은 글꼴을 웹페이지에서 사용하고 있다면...
+    서버에서 자동으로 클라이언트에게 글꼴이 다운로드 되게 만들어서
+    클라이언트가 설치되어있지 않은 글꼴도 사용할 수 있도록 하는 방법
+
+    ttf(true type font) / otf(open type font)
+    [woff]  w3c 권장, web open font format
+    woff2...
+
+    [웹 글꼴]
+    @font-face 규칙
+    -->
+
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
+      accusantium ipsam molestias nobis deleniti dolorem autem magni excepturi
+      cupiditate eius tempore quis id ducimus suscipit ratione illum soluta
+      quasi nesciunt!
+    </div>
+
+    <p>
+      <b>Note : </b>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Architecto mollitia aperiam temporibus nostrum aliquam eaque maxime.
+      Consequatur ut obcaecati doloribus sequi minima autem nihil libero sunt
+      dolorum blanditiis voluptatibus quod.
+    </p>
+  </body>
+</html>

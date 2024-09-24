@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    div{
+        background-image: url("../images/img_flwr.gif");
+        width: 150px;
+        height: 120px;
+        border: 1px solid;
+    }
+      div#div2 {
+        background-size: contain;/*사이즈가 div 사이즈에 맞춰짐*/
+      }
+      div#div3 {
+        background-size: cover;
+        /* div 영역이 배경 이미지로 완전히 덮어짐
+        배경 이미지 크기 조정, 배경 이미지 일부가 안보일 수 있음
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 224*162px -->
+    <img alt="" src="../images/img_flwr.gif" />
+
+    <br />
+
+    <div id="div1">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div id="div2">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div id="div3">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html>

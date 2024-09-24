@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid;
+      }
+      #box {
+        transform: rotate3d(1, 1, 1, 45deg);
+        transform-origin: 100px 100px 100px;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        margin: 100px;
+        transition: 1s;
+        animation: rotate 10s linear infinite;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate3d(1, 1, 1, 0deg);
+        }
+        100% {
+          transform: rotate3d(1, 1, 1, 360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    css 3D 변환
+    xyz축    
+    transform속성
+    이동 : translate3d(x,y,z)
+           translateX(x)
+           translateY(y)
+           translateZ(z)
+
+    크기 : scale3d(x,y,z)
+           scaleX(x)
+           scaleY(y)
+           scaleZ(z)
+
+    회전 : rotate3d(x,y,z)
+           rotateX(x)
+           rotateY(y)
+           rotateZ(z)
+
+matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)
+
+    transform-style 속성
+     : 3d 변환 스타일 적용 여부 지정
+    perspective 속성
+     : 3d 변환 원근감 적용 여부 지정
+-->
+    <button>회전 시작</button>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <div>Lorem ipsum dolor sit.</div>
+    <div id="box">Lorem ipsum dolor sit.</div>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+  </body>
+</html>
