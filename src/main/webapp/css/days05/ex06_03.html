@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* 전역변수 선언 */
+      :root{
+        --blue: #1e90ff;
+        --white: #fff;
+      }
+      
+      body {
+        background-color: var(--blue);
+      }
+      h2 {
+          border-bottom: 2px solid var(--blue);
+      }
+      .container {
+        color: var(--blue);
+        background-color: var(--white);
+        padding: 15px;
+      }
+      button {
+        --blue: #0000ff;
+        background-color: var(--white);
+        color: var(--blue);
+        border: 1px solid var(--blue);
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        css 변수
+        var()함수 : css변수를 사용하는 함수
+        css 변수는 DOM에 access할 수 있다.
+        local 또는 global변수를 선언할 수 있다
+        js를 사용해서 css 변수 변경할 수 있다
+        미디어 쿼리를 기반으로 변수 변경 가능
+
+        css변수 : 디자인 색상에 관해서 사용하면 좋아
+        var()사용 구문
+        var(--name, value)
+             필수    선택
+
+             변수 이름 앞에 dash 2개, 대소문자 구분
+
+        :root{ 
+            selector 안에 변수를 선언하면 global변수가 된다
+            --변수이름: 변수값;
+        }
+
+        div#box{
+            --지역변수
+        }
+
+        실습)
+-->
+
+    <h1>The Traditional Way</h1>
+
+    <div class="container">
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        <button>Yes</button>
+        <button>No</button>
+      </p>
+    </div>
+    <h1>The Traditional Way</h1>
+
+    <div class="container">
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        <button>Yes</button>
+        <button>No</button>
+      </p>
+    </div>
+  </body>
+</html>

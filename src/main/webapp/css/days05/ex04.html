@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+        text-align: center;
+    }
+    .tooltip{
+        position: relative;
+        display: inline-block;/*contents 따라 width 조정*/
+        border-bottom: 1px dotted;
+    }
+    .tooltip .tooltiptext{
+        /* visibility: hidden; */
+        position: absolute;
+
+        left: 50%;
+        bottom: 150%;
+        margin-left: -60px;/*width의 반 만큼 왼쪽으로 줘서 가운데 정렬*/
+
+
+        z-index: 1;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        padding: 5px 0;
+        border-radius: 6px;
+    
+        /* bottom: 125%;
+        left: 50%;
+        opacity: 0;
+        transition: opacity 0.3s; */
+    }
+    .tooltip:hover .tooltiptext{
+        visibility: visible;
+        opacity: 1;
+        
+        /* margin-bottom: 10px; */
+    }
+    .tooltip .tooltiptext::after{/*화살표 만들기 tooltiptext가 기준*/
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+    }
+</style>
+</head>
+<body>
+<pre>
+    Tool Tip
+    element에 마우스 올리면 추가 정보 제공    
+</pre>
+<div class="tooltip">Hover over me
+    <span class="tooltiptext">Tooltip text</span>
+</div>
+</body>
+</html>

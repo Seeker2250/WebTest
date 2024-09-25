@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;/* 좌표값 이동(top, right, bottom, left)하려고*/
+        animation-name: example;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        /*
+           alternate-reverse : 반대로 반복
+           alternate : 왕복 반복
+           normal : 정방향 반복
+           reverse : 역방향 반복
+           initial : 초기값으로 돌아감 
+           inherit : 상속된 값으로 돌아감
+           unset : 기본값으로 돌아감
+         */
+        animation-delay: 2s; /* 딜레이 */
+        animation-fill-mode: forwards;/* 종료 후 스타일 지정 */
+        
+
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        animation: example 2s linear 2s infinite alternate;
+    }
+    @keyframes example{
+        from{/*from 대신 0% 사용 가능*/
+            left: 0;
+            /* background-color: red; */
+        }
+        to{/*to 대신 100% 사용 가능*/
+            left: 200px;
+            background-color: yellow;
+        }
+    }
+</style>
+</head>
+<body>
+<!-- 
+    css animation
+    js, flash 없이 css만으로 처리
+    하나의 스타일에서 점차 다른 스타일로 변화
+    
+    keyframes : 특정 시간에 가지는 element의 스타일을 정의
+    여러 keyframes이 모여서 animation 효과 발생
+    @keyframes 애니메이션 이름{
+        from{
+            속성 : 속성값;
+        }
+        to{
+            속성 : 속성값;
+        }
+    }
+    keyframes 규칙 내에 css 스타일 지정
+    animation : 애니메이션 정의
+    animation-name : 애니메이션 이름 지정
+    animation-duration : 애니메이션 지속 시간 지정
+    animation-iteration-count : 애니메이션 반복 지정
+    animation-direction : 애니메이션 방향 지정
+    animation-timing-function : 애니메이션 속도 지정
+    animation-delay : 애니메이션 딜레이 지정
+    animation-fill-mode : 애니메이션 종료 후 스타일 지정
+    animation-play-state : 애니메이션 재생 상태 지정
+-->
+    <div>
+
+    </div>
+</body>
+</html>

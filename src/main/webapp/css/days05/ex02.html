@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition-property: width, height, background-color;
+            display: inline-block;
+            margin: 10px;
+            transition:2s ease-in-out;
+        }
+        div:hover{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            transform: rotate(45deg);
+            /* 
+            ease : 기본값, 처음에 빠르게 시작하고 점진적으로 속도를 줄임(default)
+            linear : 일정한 속도로 변경
+            ease-in : 처음에 느리게 시작하고 점진적으로 속도를 높임
+            ease-out : 처음에 빠르게 시작하고 점진적으로 속도를 줄임
+            ease-in-out : 처음에 느리게 시작하고 점진적으로 속도를 높이다가 다시 느리게 줄임
+             */
+            
+        }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    2D/3D transform
+    transition 지정된 시간동안 속성 값 부드럽게 전환
+
+    transition-property: 속성값 변경 가능한 속성
+    transition-duration: 변경 속도
+    transition-timing-function: 변경 속도 변화 속성
+    transition-delay: 변경 딜레이
+    
+    transition: 속성값, duration, timing-function, delay
+    지속시간 설정 안하면 기본 값 0
+    -->
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+  </body>
+</html>
