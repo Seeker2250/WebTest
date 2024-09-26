@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+
+  <!-- <button>Turn ON</button>
+  <button>Turn OFF</button>
+  <br>
+  <img src=". ./images/pic_bulboff.gif" alt="" id="bulb"> -->
+  <!-- <img src="../images/pic_bulbon.gif" alt="" id="bulb"> -->
+   <script>
+    // <body> document.body
+      // <body> document.querySelector("body")
+
+
+        
+
+        const btnTurnOn = document.createElement("button");
+        btnTurnOn.innerText = "Turn ON";
+        document.querySelector("body > div").appendChild(btnTurnOn);
+        
+        const btnTurnOff = document.createElement("button");
+        btnTurnOff.innerText = "Turn OFF";
+        document.querySelector("body > div").appendChild(btnTurnOff);
+        // btnTurnOff.setAttribute("style", "display: none;");
+        btnTurnOff.style.display = "none";
+        
+
+
+
+        document.querySelector("body > div").appendChild(document.createElement("br"));
+
+
+        const img = document.createElement("img");
+        img.setAttribute("src", "../images/pic_bulboff.gif");
+        img.setAttribute("alt", "불끄기");
+        img.setAttribute("id", "bulb");
+        document.querySelector("body > div").appendChild(img);
+
+   </script>
+  <script>
+    
+    btnTurnOff.style.display = "none";
+
+    btnTurnOn.onclick = function(){
+      /*img.src = "../images/pic_bulbon.gif";
+      btnTurnOn.style.display = "none";
+      btnTurnOff.style.display = "inline";*/
+      bubl_onoff(true);
+    }
+    btnTurnOff.onclick = function(){
+      // EventListener 쓰면 이벤트 같은 걸 여러개 추가하거나 삭제도 가능하다
+      /*img.src = "../images/pic_bulboff.gif";
+      btnTurnOn.style.display = "inline";
+      btnTurnOff.style.display = "none";*/
+      bubl_onoff(false);
+    }
+
+    function bubl_onoff(flag){//parameter에는 type을 안 붙여도 된다.
+     // let srcValue = "../images/pic_bulb"+(flag?"on":"off")+".gif";//괄호 없으면 "문자열true"가 되어서 true가 돼
+      //img.setAttribute("src", srcValue);
+      // img.src = flag ? "../images/pic_bulbon.gif" : "../images/pic_bulboff.gif";
+      img.setAttribute("src", `../images/pic_bulb${flag?"on":"off"}.gif`);
+      btnTurnOn.style.display = flag ? "none" : "inline";
+      btnTurnOff.style.display = flag ? "inline" : "none";
+
+      // if(flag){
+      //   img.src = "../images/pic_bulbon.gif";
+      //   btnTurnOn.style.display = "none";
+      //   btnTurnOff.style.display = "inline";
+      // }else{
+      //   img.src = "../images/pic_bulboff.gif";
+      //   btnTurnOn.style.display = "inline";
+      //   btnTurnOff.style.display = "none";
+      // }
+
+    }
+
+    
+  </script>
+</div>
+</body>
+</html>

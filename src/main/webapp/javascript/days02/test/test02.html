@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://localhost/webPro/resources/cdn-main/example.css"
+    />
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #font-size {
+        font-size: 20px;
+      }
+      span.material-symbols-outlined {
+        vertical-align: text-bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="main">
+        <a href="#" style="position: absolute; top: 30px">seeker home</a>
+      </h1>
+      <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </header>
+    <div>
+      <xmp class="code"></xmp>
+      <input type="range" name="font-control" id="font-control"  min="0" max="100" />
+      <br />
+      <span id="font-size">홍길동</span>
+      <span id="font-size-value"></span>
+    </div>
+    <script>
+      let range = document.querySelector("#font-control");
+      let span = document.querySelector("#font-size");
+      range.addEventListener("input", function () {
+        let value = range.value;
+        span.style.fontSize = value + "px";
+        document.querySelector("#font-size-value").innerText = value+"px";
+      });
+    </script>
+  </body>
+</html>

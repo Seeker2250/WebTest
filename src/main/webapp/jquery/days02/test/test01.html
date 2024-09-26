@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+ #scrollContainer{
+  width: 250px;
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  <label>이름 입력 : </label>
+  <input type="text" id="txtContent" placeholder="content 입력">
+  <br>
+  <button id="btnAdd">추가</button>
+  <div id="scrollContainer">
+    <div id="contentArea"></div>
+  </div>
+</div>
+<script>
+  // $("#btnAdd").on("click", function(){
+  //   let content = $("#txtContent").val();
+  //   $("#txtContent").val("");
+  //   $("#txtContent").focus();
+  //   $("#contentArea").find("span").css({"color": "black", "background-color": "white"});
+  //   $("#contentArea").append(`<span style="display: block; color:red; background-color:yellow;">${content}</span>`);
+  // });
+
+
+  document.querySelector("#btnAdd").addEventListener("click", function(){
+    let content = document.querySelector("#txtContent").value;
+    document.querySelector("#txtContent").value = "";
+    document.querySelector("#txtContent").focus();
+    
+    let spans = document.querySelectorAll("#contentArea span");
+    spans.forEach(function(span) {
+      span.style.color = "black";
+      span.style.backgroundColor = "white";
+    });
+    
+    let newSpan = document.createElement("span");
+    newSpan.style.display = "block";
+    newSpan.style.color = "red";
+    newSpan.style.backgroundColor = "yellow";
+    newSpan.textContent = content;
+    document.querySelector("#contentArea").appendChild(newSpan);
+    
+    document.querySelector("#scrollContainer").scrollTop = document.querySelector("#scrollContainer").scrollHeight;
+
+  });
+
+  document.querySelector("#txtContent").addEventListener("keydown", function(){
+    if(key === "Enter"){
+      document.querySelector("#btnAdd").click();
+    }
+  });
+</script>
+</body>
+</html>

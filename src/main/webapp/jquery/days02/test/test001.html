@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://localhost/webPro/resources/cdn-main/example.css"
+    />
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+      span.material-symbols-outlined {
+        vertical-align: text-bottom;
+      }
+      #demo {
+        width: 250px;
+        height: 200px;
+        overflow: auto;
+        border: 1px solid gray;
+        margin-top: 10px;
+      }
+      .item {
+        color: red;
+        background-color: yellow;
+      }
+      .search {
+        color: yellow;
+        background-color: blue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body onload="init()" onunload="destroy()">
+    <header>
+      <h1 class="main">
+        <a href="#" style="position: absolute; top: 30px">seeker home</a>
+      </h1>
+      <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </header>
+    <div>
+      <xmp class="code"></xmp>
+      <label for="name">이름 입력</label>
+      <!-- <input type="text" id="name" name="name" autofocus /> -->
+      <input type="text" id="name" name="name" />
+      <button type="button" onclick="init()">추가추가</button>
+      <button>모두 삭제</button>
+      <button>검색</button>
+      <button>수정</button>
+      <button>삭제</button>
+      <div id="demo"></div>
+    </div>
+    <script>
+      const txtName = $("#name");
+      const demo = $("#demo");
+      const btnAdd = $("button:nth-of-type(1)");
+      const btnRemove = $("button:nth-of-type(2)");
+      const btnSearch = $("button:nth-of-type(3)");
+
+      // let items = document.querySelectorAll("#demo .item");
+      // items.forEach(function(item) {
+      //   item.style.color = "black";
+      //   item.style.backgroundColor = "white";
+      // });
+
+
+      btnSearch.on("click", function(){
+        let searchWord = txtName.val();
+        
+      const items = $("#demo>.item");
+      for (var i = 0; i < items.length; i++) {
+         items[i].css("backgroundColor", "white");
+         let itemName = items[i].text();
+         
+         if(itemName.indexOf(searchWord) != -1){
+            items[i].css("backgroundColor", "black");
+            items[i].html(itemName.replaceAll(searchWord
+                  , `<span class='search'>${searchWord}</span>`));
+         }
+        }
+      });
+
+      // btnSearch.on("click", function () {
+      //   let searchWord = txtName.val(); //검색어
+      //   let items = $("#demo>.item"); //전체 아이템
+      //   items.each(function () {
+      //     let itemName = $(this).text();
+      //     if (itemName.indexOf(searchWord) !== -1) {
+      //       $(this).html(
+      //         itemName.replaceAll(
+      //           searchWord,
+      //           `<span class="search">${searchWord}</span>`
+      //         )
+      //       );
+      //     }
+      //   });
+      // });
+
+      txtName.on("keydown", function (event) {
+        if (event.keyCode == 13) {
+          demoAdd();
+        }
+      });
+
+      btnRemove.on("click", function () {
+        // alert("test");
+        /* 삭제할 때 */
+        demo.html("");
+      });
+
+      btnAdd.on("click", function () {
+        demoAdd();
+      });
+
+      function demoAdd() {
+        let name = txtName.val();
+
+        /* const items = document.querySelectorAll("#demo>.item");
+        for (var i = 0; i < items.length; i++) {
+            items[i].style.backgroundColor = "white";
+        } */
+
+        // 마지막 item의 배경색만 제거
+        const lastItem = $("#demo>.item:last-of-type");
+        if (lastItem) lastItem.css("backgroundColor", "white");
+
+        demo.html(demo.html() + `<div class="item">${name}</div>`);
+
+        txtName.val("");
+        txtName.focus();
+
+        demo.animate({ scrollTop: demo.prop("scrollHeight") }, 500); // prop() 메서드 사용
+        // scroll() / scrollBy() / scrollTo()
+        // demo.animate({ scrollTop: demo.scrollHeight }, 1000);
+      }
+
+      // btnSearch.onclick = function(){
+      //    let items = document.querySelectorAll("#demo>.item");
+      //    for(let i = 0; i < items.length; i++){
+      //       if(items[i].textContent.includes(txtName.value)){
+      //          items[i].style.color = "blue";
+      //       }
+      //    }
+      // }
+
+      // btnSearch.onclick = function(){
+      //    let items = document.querySelectorAll("#demo>.item");
+      //    for(let i = 0; i < items.length; i++){
+      //       if(txtName.value && items[i].textContent.indexOf(txtName.value) !== -1){
+      //          items[i].style.color = "blue";
+      //       }
+      //    }
+      // }
+
+      function init() {
+        txtName.focus();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+
+  <!-- <button>Turn ON</button>
+  <button>Turn OFF</button>
+  <br>
+  <img src=". ./images/pic_bulboff.gif" alt="" id="bulb"> -->
+  <!-- <img src="../images/pic_bulbon.gif" alt="" id="bulb"> -->
+
+  <script>
+    /*
+    let htmlString =
+    `<button>Turn ON</button>
+    <button>Turn OFF</button>
+    <br>
+    <img src='../images/pic_bulboff.gif' alt=''>`;
+    */
+  </script>
+  
+   <script>
+    // <body> document.body
+      // <body> document.querySelector("body")
+
+
+        
+
+        const btnTurnOn = $("<button>Turn ON</button>");
+        // btnTurnOn.prop("innerText", "Turn ON");
+        btnTurnOn.on("click", function(){
+          bubl_onoff(true);
+        });
+        $("body > div").append(btnTurnOn);
+          
+        const btnTurnOff = $("<button></button>");
+        btnTurnOff.prop("innerText", "Turn OFF");//.html이나 .text도 가능
+        // btnTurnOff.text("Turn OFF");
+
+        btnTurnOff.on("click", function(){
+          bubl_onoff(false);
+        });
+        $("body > div").append(btnTurnOff);
+        // btnTurnOff.setAttribute("style", "display: none;");
+        btnTurnOff.hide();//css("display", "none")
+
+        $("body > div").append("<br>");
+
+        const img = $("<img>");
+        /*
+        img.prop("src", "../images/pic_bulboff.gif");
+        img.prop("alt", "불끄기");
+        img.prop("id", "bulb");
+        img.prop("style", "width: 100px;");*/
+        img.prop({
+          src: "../images/pic_bulboff.gif",
+          alt: "불끄기",
+          id: "bulb",
+          style: "width: 100px;"
+        });
+        
+        $("body > div").append(img);
+
+   </script>
+  
+  <script>
+  /*
+    btnTurnOff.prop("style", "display: none;");
+
+    btnTurnOn.on("click", function(){
+      bubl_onoff(true);
+    });
+    btnTurnOff.on("click", function(){
+  
+      bubl_onoff(false);
+    });
+    */
+
+    function bubl_onoff(flag){
+      img.attr("src", `../images/pic_bulb${flag?"on":"off"}.gif`);
+      
+
+      // btnTurnOn.css("display", flag ? "none" : "inline");
+      // btnTurnOff.css("display", flag ? "inline" : "none");
+      btnTurnOn.toggle();
+      btnTurnOff.toggle();
+
+
+
+
+      // btnTurnOn.prop("style", (flag ? "display: none;" : "display: inline;"));
+      // btnTurnOff.prop("style", (flag ? "display: inline;" : "display: none;"));
+
+      // if(flag){
+      //   img.src = "../images/pic_bulbon.gif";  
+      //   btnTurnOn.style.display = "none";
+      //   btnTurnOff.style.display = "inline";
+      // }else{
+      //   img.src = "../images/pic_bulboff.gif";
+      //   btnTurnOn.style.display = "inline";
+      //   btnTurnOff.style.display = "none";
+      // }
+
+    }
+
+    
+  </script>
+</div>
+</body>
+</html>
