@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  좋아하는 과목을 모두 선택하세요
+  <br>
+  <input type="checkbox" name="subject" value="kor" id="kor">
+  <label for="kor">국어</label>
+  <input type="checkbox" name="subject" value="eng" id="eng">
+  <label for="eng">영어</label>
+  <input type="checkbox" name="subject" value="mat" id="mat">
+  <label for="mat">수학</label>
+  <input type="checkbox" name="subject" value="pe" id="pe">
+  <label for="pe">체육</label>
+  <button>확인</button>
+  <p id="demo"></p>
+  <script>
+    /*
+    1번
+    $("button").on("click", function(){
+      // jquery selector :checkbox는 input[type=checkbox]
+      const ul = $("<ul></ul>");
+      $("demo").append(ul);
+      
+      $(":checkbox[name=subject]:checked").each(function(index, element){//check된 checkbox
+        // const li = $(`<li>${element.val()}</li>`);
+        const li = $("<li>}</li>");
+        li.text(element.value);
+        ul.append(li);
+      });
+      $("#demo").append(ul);
+    })*/
+   $("button").on("click", function(){
+    let htmlString = "<ul>";
+      $(":checkbox[name=subject]:checked").each(function(index, element){//check된 checkbox
+          htmlString += `<li>${element.value}</li>`;
+      });
+      htmlString += "</ul>";
+       $("#demo").html(htmlString);
+   });
+
+
+
+
+/*document.querySelector("button").onclick = () =>{
+      const sList = document.querySelectorAll("input[type=checkbox][name=subject]");
+
+
+      // let htmlString = "<ul>";
+      const ul = $("<ul></ul>");
+      for (let i = 0; i < sList.length; i++) {
+        const element = sList[i];
+        if(element.is(":checked")){
+          console.log(element.val());
+          const li = $("<li></li>"); // <li></li>
+          ul.append(li);// <li>이것저것</li>
+          htmlString += `<li>${element.val()}</li>`;
+        }
+        
+      }//for
+
+      // htmlString += "</ul>";
+      // demo.append(ul)
+      // document.querySelector("#demo").innerHTML=htmlString;
+    }*/
+  </script>
+</div>
+
+</body>
+</html>

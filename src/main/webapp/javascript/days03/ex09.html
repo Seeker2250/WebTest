@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    <!-- js data type -->
+     undefined
+     number 정수 / 실수
+     java - byte, short, int, long, float, double
+     js - (항상 64bit 부동 소수점 형식으로 저장)
+
+     boolean true / false
+     string 문자열
+     null 
+     BigInt ES2020 추가(너무 큰 정수값을 저장할 자료형, 64bit 부동 소수점 형식으로 저장) 
+     let x = BigInt(123456789012345678901234567890);
+
+     symbol ES2015 추가(유일한 식별자를 만들 때 사용)
+     object 객체( {} js 객체, [] js 배열)
+  </xmp>
+</div>
+<script>
+  let a = null;
+  alert(typeof a); // object 초창기에 null은 객체였다.
+
+  let age = 3.14;
+  alert(typeof age); // undefined
+
+  let gender = true;
+  alert(typeof gender); // boolean
+</script>
+</body>
+</html>

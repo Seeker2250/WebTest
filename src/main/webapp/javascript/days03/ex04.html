@@ -1,0 +1,57 @@
+<script>document.write("홍길동 1")</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <script>document.write("홍길동 2")</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<script src="ex04_script.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+  <script>document.write("홍길동 3")</script>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     js code는 <script></script> tag 안에 코딩
+     <script type="text/javascript"></script>라고 해야했는데, 이젠 필수가 아냐
+
+     body, head에 추가할 수 있다.
+     body 안의 <script></script>
+     head 안의 <script></script>
+     html 안의 <script></script>
+     html 밖의 <script></script>
+     
+     script element를 </body> 위에 배치하면
+     script 해석으로 인해 표시 속도가 향상.
+     
+
+     여러 페이지에서 공통적으로 쓰는 js 코딩이 있으면
+     외부 js 파일로 참조할 수 있다
+
+     html 코딩과 js코딩 분리
+      가독성 / 유지보수 구우웃
+      외부 js file이 caching돼서 페이지 로딩 속도 향상
+  </xmp>
+  <button onclick="nameAlert('홍길동')">외부 js 사용 버튼</button>
+</div>
+<script>document.write("홍길동 4")</script>
+</body>
+<script>document.write("홍길동 5")</script>
+</html>
+<script>document.write("홍길동 6")</script>

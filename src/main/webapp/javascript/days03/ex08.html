@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     js operator
+     1. arithmetic operator(산술연산자)   + - * / %
+     2. assignment operator(대입연산자)   = += -= *= /= %=  
+     3. comparison operator(비교연산자)   == ===(값 + 타입 비교) != !==(값 + 타입 비교) > < >= <=
+     4. logical operator(논리연산자)   && || !
+     5. bitwise operator(비트연산자)   & | ~ ^ << >> >>>
+     6. special operator(특별연산자)   typeof instanceof new
+     7. string operator(문자연산자)   + +=
+     8. comma operator(쉼표연산자)
+     9. unary operator(단항연산자)   ++ --
+     10. binary operator(이항연산자)   + - * / %  
+     11. ternary operator(삼항연산자) 
+     12. type operator(타입연산자) typeof instanceof
+
+  </xmp>
+</div>
+<script>
+  document.write(5 + 3); document.write("<br>");//8
+  document.write("5" + 3); document.write("<br>");//"53"
+  document.write(5 + 3 + "8"); document.write("<br>");//88
+  document.write("asdf"+12+3); document.write("<br>");//"asdf123"
+  
+
+</script>
+<script>
+  //           true
+  // alert(typeof "3");//string
+  // alert(typeof 3);//number
+  
+  document.write("3"==3); document.write("<br>");//true
+  document.write("3"===3); document.write("<br>");//false
+
+
+
+  let a = 2, b = 3;
+  a **= b;
+
+
+  let n = 10;
+  document.write(n++); document.write("<br>");//10
+  document.write(++n); document.write("<br>");//12
+
+
+  document.write(5 + 3); document.write("<br>");
+  document.write(5 - 3); document.write("<br>");
+  document.write(5 * 3); document.write("<br>");
+  document.write(5 / 3); document.write("<br>");
+  document.write(5 % 3); document.write("<br>");
+  document.write(5 / 0); document.write("<br>");//Infinity
+  document.write(0 / 5); document.write("<br>");//0
+  document.write(5 % 0); document.write("<br>");//NaN(Not a Number)
+
+</script>
+</body>
+</html>
