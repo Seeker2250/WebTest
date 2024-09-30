@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     seleted : "selected"
+  </xmp>
+  <br>
+  <select id="subject" name="subject">
+    <option value="">선택하세요</option>
+    <option value="kor">국어</option>
+    <option value="eng">영어</option>
+    <option value="mat">수학</option>
+    <option value="pe">체육</option>
+    <!-- value속성 설정안하면 text속성이 value값이 된다. -->
+  </select>
+  <br>
+  <button>확인</button>
+  <p id="demo"></p>
+
+</div>
+<script>
+  document.querySelector('#subject').onchange = function() {
+    // alert("change");//다른 옵션을 선택할 때 발생
+    selectChange();
+  }
+  document.querySelector('button').onclick = function(){
+    selectChange();
+  }
+  function selectChange(){
+    let sel = document.querySelector('#subject');
+    let demo = document.querySelector('#demo');
+    // alert(sel.selectedIndex);//선택된 인덱스 번호 return
+    if(sel.selectedIndex == 0){
+      demo.innerHTML = '과목을 선택하세요';
+      return;
+    } 
+    // js options collection
+    let s_opt = sel.options[sel.selectedIndex];
+    // s_opt.getAttribute('value');
+    let oValue = s_opt.value;
+    // demo.innerHTML = oValue;
+    let oText = s_opt.text;
+    demo.innerHTML = `선택한 옵션의 value : ${oValue}
+                      <br>
+                      선택한 옵션의 text : ${oText}`;
+  }
+  document.querySelector('button').addEventListener('click',function(){
+    let sel = document.querySelector('#subject');
+    let demo = document.querySelector('#demo');
+    // alert(sel.selectedIndex);//선택된 인덱스 번호 return
+    if(sel.selectedIndex == 0){
+      demo.innerHTML = '과목을 선택하세요';
+      return;
+    } 
+    // js options collection
+    let s_opt = sel.options[sel.selectedIndex];
+    // s_opt.getAttribute('value');
+    let oValue = s_opt.value;
+    // demo.innerHTML = oValue;
+    let oText = s_opt.text;
+    demo.innerHTML = `선택한 옵션의 value : ${oValue}
+                      <br>
+                      선택한 옵션의 text : ${oText}`;
+  });
+
+  document.querySelector('#subject').addEventListener('change', function() {
+  const texts = [...this.options]
+    .filter(option => option.selected)
+    .map(option => option.text);
+  
+  document.querySelector('#demo').innerHTML = `선택한 옵션의 text: ${texts.join(', ')}`;
+});
+
+  // 선택하면 바로 결과를 표시하는 이벤트 리스너 추가
+  // document.querySelector('#subject').addEventListener('change', function() {
+  //   let sel = this;
+  //   let demo = document.querySelector('#demo');
+    
+  //   if (sel.selectedIndex == 0) {
+  //     demo.innerHTML = '과목을 선택하세요';
+  //     return;
+  //   }
+    
+  //   let s_opt = sel.options[sel.selectedIndex];
+  //   let oValue = s_opt.value;
+  //   let oText = s_opt.text;
+    
+  //   demo.innerHTML = `선택한 옵션의 value : ${oValue}
+  //                     <br>
+  //                     선택한 옵션의 text : ${oText}`;
+  // });
+</script>
+</body>
+</html>

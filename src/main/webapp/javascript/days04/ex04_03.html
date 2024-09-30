@@ -26,37 +26,41 @@
   <xmp class="code">
      
   </xmp>
-  
-
 </div>
 <script>
-
-   <table border='1' style='width:300px'></table>
-   content += "<tr>                   ";
-   content += "   <td>Lorem.</td>    ";
-   content += "   <td>Placeat.</td>  ";
-   content += "   <td>Eos?</td>      ";
-   content += "</tr>                  ";
-   content += "<tr>                   ";
-   content += "   <td>Lorem.</td>    ";
-   content += "   <td>Placeat.</td>  ";
-   content += "   <td>Eos?</td>      ";
-   content += "</tr>                  ";
-   content += "<tr>                   ";
-   content += "   <td>Lorem.</td>    ";
-   content += "   <td>Placeat.</td>  ";
-   content += "   <td>Eos?</td>      ";
-   content += "</tr>                  ";
-   
+  // ES5까지는 이렇게 사용
   /*
-    html문서가 로드된 후에
-    document.write()ㄹ르 사용하면 기본 html이 전부 삭제 돼
-    test용으로 많이 사용
-  */
-   document.querySelector("button").onclick =()=>{
-    document.write(content);
+  var x = function(a,b){
+    return a + b;
   }
-  
+  alert(x());
+  */
+
+  // ES6 arrow function expression(Like Lambda in Java)
+  /*
+  var x = (a, b) => a+b;
+  var x = (a, b) => {
+    return a + b;
+  }
+  */
+
+  // arrow function은 hoisting 되지 않아.
+
+  // js 함수의 매개변수는 let, var, const 키워드를 사용하지 않는다.
+  // 즉, data type을 명시하지 않는다.
+  // function test(x, y){
+
+  // }
+
+  function test(x, y = 0){//argument의 초기값을 설정할 수 있다.
+    // if (y === undefined) 
+      // y = 0;
+    
+    alert(`${x} / ${y}`);
+  }
+  // test(52, 12);
+  // test(12, 42, 63, 24, 645)  이건 12, 42만 나와
+  test(100) //이건 100, undefined
 </script>
 </body>
 </html>

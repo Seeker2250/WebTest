@@ -26,37 +26,32 @@
   <xmp class="code">
      
   </xmp>
-  
-
 </div>
 <script>
-
-   <table border='1' style='width:300px'></table>
-   content += "<tr>                   ";
-   content += "   <td>Lorem.</td>    ";
-   content += "   <td>Placeat.</td>  ";
-   content += "   <td>Eos?</td>      ";
-   content += "</tr>                  ";
-   content += "<tr>                   ";
-   content += "   <td>Lorem.</td>    ";
-   content += "   <td>Placeat.</td>  ";
-   content += "   <td>Eos?</td>      ";
-   content += "</tr>                  ";
-   content += "<tr>                   ";
-   content += "   <td>Lorem.</td>    ";
-   content += "   <td>Placeat.</td>  ";
-   content += "   <td>Eos?</td>      ";
-   content += "</tr>                  ";
-   
-  /*
-    html문서가 로드된 후에
-    document.write()ㄹ르 사용하면 기본 html이 전부 삭제 돼
-    test용으로 많이 사용
-  */
-   document.querySelector("button").onclick =()=>{
-    document.write(content);
+  const person = {
+    
+      name:"홍길동",
+      age: 20,
+      birth:{
+        year : 2000,
+        month:9,
+        day:17
+      }
   }
-  
+  // 새로운 속성(field) 추가
+  person.genger = "남자";
+  //속성 삭제
+  delete person.age;
+
+  // 중첩 객체를 속성으로 사용할 수 있다.
+  person.birth.year
+  // let info = person.info; info method의 정의(선언부분)을 반환
+  // let info = person.info();
+
+  // 객체가 만들어진 후 method 추가
+  person.disp = function () {
+    
+  }
 </script>
 </body>
 </html>

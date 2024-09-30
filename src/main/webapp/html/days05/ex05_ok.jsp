@@ -14,8 +14,8 @@
     &
     pwd=12341234
     -->
-    <%
-    /* 스크립트 3가지 요소 중에 scriptlet, expression
+    <%  <!--scriptlet-->
+    /* 스크립트 3가지 요소 중에 scriptlet, expression(표현식)
         java 코딩
      jsp에 내장된 9가지 객체 중 */
      String id = request.getParameter("id");

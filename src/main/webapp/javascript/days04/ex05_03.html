@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  <script>
+    const person = {
+        name : "홍길동",
+        age : 20,
+        gender : true,
+        birth:{
+          year : 2000,
+          month : 9,
+          day : 17
+        },
+        // disp : function(){
+        //   return name+"/"+age
+        // }
+    };
+    // js 객체 -> JSON으로 변환
+    let personJson = JSON.stringify(person);
+     alert(personJson);
+
+
+    let content="";
+    // 객체로부터 모든 속성을 가져오는 반복문
+    for (const pn in content) {
+        // console.log(ie);
+        //            object명.field명  -> 이건 작동 안해(for in안에서)
+        //            object명[field명]
+        content += person[pn]+" ";
+    }
+    alert(content);
+  </script>
+</div>
+</body>
+</html>
