@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [js 문자열, methods, templetes]
+    js 문자열은 ""든 ''든 상관없음
+
+  </xmp>
+</div>
+<script>
+  let name = 'kim\'s \"home\"';
+  let addr = "kim's home";
+  // ES6(2016) 도입된
+  // (backtick operator)
+  // ''든 ""든 다 허용
+  // 여러 줄의 문자열도 허용
+
+  let msg = `
+                kim's
+                "home"
+            `;
+// 객체 생성자 함수
+// let name2 = new String("admin");
+// let name2 = "admin"; 권장
+
+let a = "admin";//string
+alert(typeof a);
+let b = new String("admin");//object
+alert(typeof b);
+
+
+// a == b true      <->   !=
+// a === b false    <->   !==
+
+// \n, \t, \b 브라우저에서 큰 의미 없음
+// <br> &nbsp;
+</script>
+
+</body>
+</html>

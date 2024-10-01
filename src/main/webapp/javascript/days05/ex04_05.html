@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    String indexOf()
+    String lastIndexOf()
+    String includes()
+
+    String search()
+    
+    String match() : 문자열, 정규표현식을 기준으로 일치하는 배열을 return하는 method
+    String matchAll() : 문자열, 정규표현식을 기준으로 일치하는 Iterator를 return하는 method(ES2020에 포함, IE 안돼)
+  
+    String startsWith()
+    String endsWith()
+
+    `` backtick operator를 사용한 문자열 : templete String
+       ES6(2015)에 도입
+
+       let price = 2035;
+       `price = ${price * 0.03}`
+  </xmp>
+</div>
+<script>
+  let text = "The rain in SPAIN stays mainly in the plain";
+  // text.search( /ain/i );
+  const result = text.match( /ain/gi);//g 모드 포함
+  //alert(typeof result); // object야 이를 통해 array인 걸 알 수 있음.
+  alert(result.length);
+  
+  let a = "안녕하세요. 홍길동입니다. 이름은 홍길동입니다.";
+  alert(a.search("/admin/i")); //정규 표현식 사용 가능
+
+  //alert(a.indexOf("홍길동"));//7
+  //alert(a.lastIndexOf("홍길동"));//19
+  //alert(a.includes("홍길동"))//true
+
+  let url = "http://www.naver.com";
+  //alert(url.startsWith("http://"));//true
+  //alert(url.endsWith(".com"));//true
+
+</script>
+</body>
+</html>

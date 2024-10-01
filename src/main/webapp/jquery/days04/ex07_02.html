@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+   href="http://localhost/webPro/images/SiSt.ico">
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+   href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+span.material-symbols-outlined {
+   vertical-align: text-bottom;
+}
+</style>
+</head>
+<body>
+   <header>
+      <h1 class="main">
+         <a href="#" style="position: absolute; top: 30px;">lsh</a>
+      </h1>
+      <ul>
+         <li><a href="#">로그인</a></li>
+         <li><a href="#">회원가입</a></li>
+      </ul>
+   </header>
+   <div>
+      <xmp class="code"> </xmp>
+      
+      <div
+         style="display: flex; justify-content: space-around; align-items: baseline;">
+         <input type="type" autofocus="autofocus">
+
+         <select name="operator" id="operator">
+         
+         <option>선택</option>
+         <option>+</option>
+         <option>-</option>
+         <option>*</option>
+         <option>/</option>
+         <option>%</option>
+         <option>**</option>
+      </select>
+      <input type="text">
+      =
+      <input type="text" disabled="disabled">
+      </div>
+
+   </div>
+   <script>
+   // input[type=text] == jquery selector :text
+   // let a = $(":text").first();
+   let b = $(":text").eq(1);
+   let c = $(":text").last();
+
+   let opCmb = $("#operator");
+   
+   let n1, n2;
+   
+   $(":text").first().on("keydown", function(event){
+      if( !(event.which >= 48 && event.which <= 57
+            || event.which == 8
+            || event.which == 13
+            || event.which == 229) ){
+         alert("숫자만 입력하세요.");
+         
+         /* 이벤트 취소 */
+         event.returnValue = false;
+      }
+      
+      if(event.which == 13)
+         n1 = $(this).val();
+         b.focus();
+   });
+   
+   b.on("keydown", function(event){
+      if( !(event.which >= 48 && event.which <= 57
+            || event.which == 8
+            || event.which == 13
+            || event.which == 229) ){
+         alert("숫자만 입력하세요.");
+         
+         /* 이벤트 취소 */
+         event.returnValue = false;
+   }
+   
+      if(event.which == 13){
+         /*
+         let result = parseInt(a.value) + Number(b.value);
+         c.value = result;
+         
+         a.select();
+         */
+         
+         // previousElementSibling : 앞에 있는 놈
+         n2 = $(this).val();
+         $(this).prev().focus();
+      }
+   });
+   
+   opCmb.on("change", function(){
+      let op = $(this).val(); // + - *
+      
+      // eval() : 계산해주는 함수
+      let result = eval(n1 + op + n2); // "10" + "+" + "2" eval("10+2")
+      
+      c.val(result);
+      $(":text").first().select();
+   });
+   
+   /*
+   opCmb.on("change", function(){
+      let result;
+      
+      switch ($(this).val()) {
+      case "+":
+         result = parseInt(a.val()) + Number(b.val());
+         break;
+      case "-":
+         result = parseInt(a.val()) - Number(b.val());
+         break;
+      case "*":
+         result = parseInt(a.val()) * Number(b.val());
+         break;
+      case "/":
+         result = parseInt(a.val()) / Number(b.val());
+         break;
+      case "%":
+         result = parseInt(a.val()) % Number(b.val());
+         break;
+      case "**":
+         result = parseInt(a.val()) ** Number(b.val());
+         break;
+
+      default:
+         break;
+      }
+      
+      c.val(result);
+      
+      a.select();
+      
+   });
+   */
+   </script>
+</body>
+</html>
