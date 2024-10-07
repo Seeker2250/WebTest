@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    forEach()
+    map()
+    flatMap()
+    filter()
+    reduce() : 왼 -> 오
+    reduceRight() : 오 -> 왼
+
+    every() : array의 모든 요소가 조건 만족하면 true, 아니라면 false return
+    some() : array의 요소 중 1개라도 조건을 만족하면 true, 아니라면 false return
+    from() : 길이가 있는 모든 object에서 array를 return
+    keys()
+    entries()
+    with()
+    등등
+  </xmp>
+</div>
+<script>
+  const m = [45, 4, 8, 16, 25];
+  document.write(m.toString() + "<br>");
+  // forEach()
+  // callback function
+  /*
+  let sum = 0;
+  m.forEach((element, index, array)=>{
+    // document.write(element + " / " + index + " / " + array.toString() + "<br>"
+    sum += element;
+    
+  })
+  document.write(sum + "<br>")
+*/
+
+
+  // map()
+  // 새로운 array 생성, 반환
+// m 배열의 각 요소를 2배씩 증가, 새로운 배열 n 생성
+/*
+const n = [];
+m.forEach((element, index, array)=>{
+  n.push(element * 2)
+})
+
+document.write(n.toString()+ "<br>");
+*/
+
+/*
+const n = m.map((element, index, array)=>{
+  return element * 2;
+});
+document.write(n.toString()+ "<br>");
+*/
+
+
+
+
+// [filter]
+//    ㄴ array 각 요소를 조건에 맞는 요소만 갖는 새로운 배열 생성
+// m[]에서 15 이상의 요소만의 새로운 배열 n 생성
+// const n = [];
+/*
+for (let i = 0; i < m.length; i++) {
+  if(m[i]>15)
+  n.push(m[i]);
+  
+}
+  */
+
+// n = m.filter((element, index, array)=>element > 15);
+// document.write(n.toString()+"<br>");
+
+
+
+
+
+
+// [reduce]
+//      ㄴ array element에 대해 function 실행하여 단일값으로 축소 및 return
+// [문제]
+// m 배열의 총합 구해서 출력
+let sum = 0;
+m.forEach((element, index, array)=> sum += element);
+document.write(sum +"<br>");
+
+// m.reduce((accumulator, currentValue, index, array)=>{
+//   return + element;
+// }, 0);
+
+let tot = m.reduce(function(sum, e, i, arr){
+  return sum + e;
+}, 0);
+document.write(sum +"<br>");
+
+
+
+
+
+
+// [every]
+// array m의 모든 element가 20이상인지 여부
+
+// m.forEach((element)=>{
+//   if(element >= 20){
+
+//   }else{
+//     console.log();
+//   }
+// })
+
+let flag = m.every((element, index, array)=> {
+  return element > 20;
+})
+document.write(flag +"<br>");
+
+
+flag = m.some((element, index, array)=> {
+  return element > 20;
+})
+document.write(flag +"<br>");
+
+
+
+
+
+
+
+
+
+
+
+
+//[from]
+let msg = "Hello World";
+// const a = msg.from();
+const a = Array.from(msg);//알파벳 하나씩 잘라서 다 배열로 만들어(공백도)
+document.write(a.toString() +"<br>");//H,e,l,l,o, ,W,o,r,l,d
+
+// m[2] = 90; 새로운 배열 n 생성
+const n = m.with(2, 90);
+document.write(n.toString() +"<br>");//45,4,90,16,25
+</script>
+</body>
+</html>

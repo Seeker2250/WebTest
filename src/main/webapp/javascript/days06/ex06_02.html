@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://localhost/webPro/resources/cdn-main/example.css"
+    />
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+      span.material-symbols-outlined {
+        vertical-align: text-bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="main">
+        <a href="#" style="position: absolute; top: 30px">seeker home</a>
+      </h1>
+      <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </header>
+    <div>
+      <xmp class="code"></xmp>
+    </div>
+    <script>
+      // 이번 달 마지막 날짜
+      const today = new Date();
+      let year = today.getFullYear();
+      let month = today.getMonth() + 1;
+      let day = today.getDate();
+      const d = new Date(year, month, 0); //2024년 11월의 underflow로 2024년 10월의 마지막~
+      document.write(d.getDate() + "<br>");
+
+      const rrn = "871008-170001";
+      //생일 O / X / 오늘
+
+      /*
+  let birthday = rrn.substring(2, 6);
+  let now = month.toString()+day.toString();
+  if(birthday > now){
+    document.write("생일 안 지남");
+  }else if(birthday == now){
+    document.write("오늘 생일");
+  }else{
+    document.write("생일 지남");
+  }
+  */
+      //  년도 2/1자리 ->1900년도
+      // js slice() / substring() / substr()
+      today.setHours(0);
+      today.setMinutes(0);
+      today.setSeconds(0);
+      today.setMilliseconds(0);
+      const mon = rrn.substr(2, 2);
+      let date = rrn.substr(4, 2);
+      const b = new Date(year, mon - 1, date);
+      document.write(b.getTime() + "<br>");
+      document.write(today.getTime() + "<br>");
+      // document.write(today.getTime() - b.getTime() + "<br>");
+      document.write(today - b + "<br>");
+    </script>
+  </body>
+</html>

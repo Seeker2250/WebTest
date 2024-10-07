@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     java 날짜 객체 Date, Calendar, LocalDate, LocalTime, LocalDateTime 등
+     js 날짜 객체 Date
+  </xmp>
+</div>
+<script>
+  const d = new Date();
+  // alert(typeof d)//object
+  document.write(d + "<br>");
+  document.write(d.toString() + "<br>");
+  document.write(d.toDateString() + "<br>");
+  document.write(d.toTimeString() + "<br>");
+  document.write(d.toLocaleDateString() + "<br>");
+  document.write(d.toLocaleString() + "<br>");
+  document.write(d.toLocaleTimeString() + "<br>");
+
+  document.write(d.getFullYear() + "<br>");
+  document.write( ('0' + (d.getMonth() + 1)).slice(-2) + "<br>");
+  document.write(('0' + d.getDate()).slice(-2) + "<br>");
+  document.write(d.getHours() + "<br>");
+  document.write(d.getMinutes() + "<br>");
+  document.write(d.getSeconds() + "<br>");
+  document.write(d.getMilliseconds() + "<br>");
+  document.write("일월화수목금토"[d.getDay()] + "<br>")
+
+  // 문제 2024-12-23 무슨 요일?
+  // new Date()//현재 시스템 날짜 시간
+  // new Date(date String)
+  // const a = new Date("2024-12-23"); : ISO8601 Date YYYY-MM-DD
+  const a = new Date(2024 , 12-1 , 23);
+  document.write("일월화수목금토"[a.getDay()] + "<br>")
+  
+  const b = new Date(2024 , 12-1);
+  document.write("일월화수목금토"[b.getDay()] + "<br>")
+
+  const c = new Date(2024);
+  document.write("일월화수목금토"[c.getDay()] + "<br>")//1970.1.1 dhwjd 9:00:02(2024밀리초로 인식)
+
+  //new 연산자로 Date(연, 월);
+  //new 연산자로 Date(연, 월, 일);
+  //new 연산자로 Date(연, 월, 일, 시간);
+  //new 연산자로 Date(연, 월, 일, 시간, 분);
+  //new 연산자로 Date(연, 월, 일, 시간, 분, 초);
+  //new 연산자로 Date(연, 월, 일, 시간, 분, 초, 밀리초);
+  //new 연산자로 Date(밀리초);
+
+// js 날짜 형식
+// ISO Date : "2015-03-25" 국제 표준 날짜 형식
+// Short Date : "03/25/2015"
+</script>
+</body>
+</html>

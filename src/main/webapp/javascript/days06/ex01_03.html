@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://localhost/webPro/resources/cdn-main/example.css"
+    />
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+      span.material-symbols-outlined {
+        vertical-align: text-bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="main">
+        <a href="#" style="position: absolute; top: 30px">seeker home</a>
+      </h1>
+      <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </header>
+    <div>
+      <xmp class="code"
+>
+    Array length
+    Array toString() : array의 element를 , delimeter로 문자열 return
+    Array at() : 
+    Array join() : 
+    Array push() : array 새로운 요소를 마지막에 추가, array size return
+    Array pop() : array 마지막 요소를 제거 & return
+    Array shift() : 첫 element 제거 & return, 모든 왼쪽으로 이동
+    Array unshift() : 첫 번째 요소에 삽입, 모든 요소를 오른쪽으로 이동, array size return
+    Array delete() : array delete 
+    Array concat() : array merge
+    Array copyWithin() : 덮어쓰기로 복사
+    Array flat() : 다차원 배열을 1차원으로~
+    Array splice()
+    Array toSpliced() : 기존 배열은 변경하지 않고, 새로운 배열을 return
+    Array slice()
+    </xmp>
+
+  <p id="demo"></p>
+      >
+    </div>
+    <script>
+      // js array는 object
+      const person = [];
+      person[0] = "kim";
+      person[1] = new Date();
+      person[2] = 20;
+
+      console.log(person.length);
+
+      //Array object인지 확인
+      // alert(Array.isArray(person)); //true
+      // alert(person instanceof Array);
+      person.push("넣자");
+      console.log(person.length);
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      // fruits[1] = "test";//update
+      //첫 element에 PineApple 추가, 모든 element 한 칸씩 뒤로 이동
+      // let arraySize = fruits.unshift("PineApple");
+      console.log(fruits);
+
+      // delete fruits[1];
+      // alert(fruits.toString()); //Banana,(undefined),Apple,Mango
+
+      /*
+      fruits.reverse();
+      fruits.push("PineApple");
+      fruits.reverse();
+      alert(fruits);
+      */
+      /*
+      fruits.shift();
+
+      console.log(fruits.toString());
+      console.log(fruits[1]);
+      console.log(fruits.at(1));//ES2022 추가
+      */
+      
+      // let content = "<ul>";
+      // fruits.forEach((element)=>{
+      //   content += `<li>${element}</li>`;
+      // });
+      // content += "</ul>";
+      // $("#demo").html(content);
+
+
+      // let content = fruits.join();
+      // $("#demo").html(content);
+
+      // let content = fruits.join(" / ");
+      // $("#demo").html(content);
+
+      /*
+      let content = "<ul><li>"
+      content += fruits.join("<li></li>");
+      content += fruits.join("</li></ul>");
+      $("#demo").html(content);
+      // document.getElementById(demo).innerHTML(content);
+      fruits.push("PineApple");
+      */
+      // alert(fruits.toString());
+
+      /*
+      const n = [1, 2, 3];
+      const m = [4, 5, 6];
+      const s = [7, 8, 9];
+      // array merge
+      // const nm = n.concat(m);
+      // const nms = nm.concat(s);
+      const nms = n.concat(m, s);
+      console.log(nms.toString());
+        */
+
+      // copyWithin() : array의 element를 array의 다른 위치에 copy
+      // const m = [3, 5, 2, 4, 1];
+      // console.log(m.copyWithin(2, 0));//0번째 값을 2번째로
+      // console.log(m.copyWithin(2, 0, 2));//3, 5, 3, 5, 1(0번째부터 2개를 복사해서 2개 붙여넣겠당, 덮어쓰기 해)
+      
+      // 2차원 배열
+      const a1 = [
+                  [1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]
+                  ];
+      const a2 = [];
+      /*
+      a1.forEach(row => {
+        row.forEach(element => {
+          a2.push(element);
+        });
+      });
+      console.log(a2);
+      */
+      // a2 = a1.flat();
+
+      const b1 = ['a', 'b', 'c', 'd'];
+      b1.splice(2, 0, 'x', 'y');
+      console.log(b1);
+
+      const months = ["Jan", "Feb", "Mar", "Apr"];
+      const spliced = months.toSpliced(0,1);//새로운 element를 추가할 index 0, 제거할 element 갯수, 원본 유지, 새로운 array
+      // const spliced = months.slice(0,1);//0번째부터 n번째 값까지 가져와, 원본 변경
+      console.log(spliced)
+    </script>
+  </body>
+</html>
