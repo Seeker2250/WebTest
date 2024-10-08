@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://localhost/webPro/resources/cdn-main/example.css"
+    />
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+      span.material-symbols-outlined {
+        vertical-align: text-bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="main">
+        <a href="#" style="position: absolute; top: 30px">seeker home</a>
+      </h1>
+      <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </header>
+    <div>
+      <xmp class="code"></xmp>
+    </div>
+    <script>
+      const person = {
+        name: "admin",
+        age: 20,
+        gender: true,
+      };
+
+      // let pName = person.name;
+      // let pAge = person["age"];
+      // console.log(pName + "/" + pAge);
+
+      /*
+      let {name, age, country='US'} = person;
+      console.log(name + "/" + age + "/" + country);
+      */
+
+      // 속성 별칭
+      let { name:n } = person;
+      // alert(n);
+
+      // 문자 분해(distructuring)
+      // let msg = "hello world!!!";
+      // let [a, b, c, d, e] = msg;
+      // alert(c);
+
+
+      // 배열 구조 분해
+      const m = [3, 5, 2, 4, 1];
+      let[a,,,,e] = m;
+      // alert(e);
+
+      // 배열 위치값
+      // let {[2]:x, [3]:y} = m;
+
+      // 3 5
+      let [x, y, ...rest]=m;
+      alert(x+" / " + y + " / " + rest);
+
+
+      x = 10;
+      y = 20;
+      // js 두 기억공간 값 바꾸기
+      [x, y] = [y, x];
+      /*
+      let temp = x;
+      x = y;
+      y = temp;
+      */
+      alert (x + " / " + y);//20 10
+    </script>
+  </body>
+</html>

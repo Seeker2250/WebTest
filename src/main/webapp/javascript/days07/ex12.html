@@ -24,8 +24,42 @@
 </header>
 <div>
   <xmp class="code">
+     ex12_person.js
+     ex12_message.js
+
+     js module
+     js를 별도의 파일로 나눠서 관리
+     코드 유지 보수에 용이
+
+     import : 외부 파일로부터 module 가져와
+     export : 
      
+     함수 또는 변수를 포함하는 module을 만들어.
+     이 모듈을 외부 js file로 저장
+     
+     내보내기
+     1) 명명된 이름으로 내보내기(export)
+     2) 기본(default) 내보내기(export)
+
+
   </xmp>
+
+  <p id="demo"></p>
+  <!-- 명령문을 사용하여 외부 파일 가져오기 -->
+   <script type="module">
+      import {name, age} from "./ex12_person.js";
+
+      $("p#demo").html(`${name} - ${age}`);
+   </script>
+
+<script type="module">
+  import message from "./ex12_message.js";
+
+  $("p#demo").html(message());//method 얻어와
+</script>
 </div>
+<script>
+
+</script>
 </body>
 </html>
