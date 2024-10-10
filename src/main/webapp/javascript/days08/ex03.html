@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  <p id="demo"></p>
+</div>
+<script>
+  const person = {
+    name:"admin",
+    age:20,
+    display:function(){
+      $("#demo").html(this.name+"/"+this.age);
+    }
+  };
+
+  person.display();//this가 가리키는 게 지금은 person의 name, age를 불러와
+  //3초 후 person.display() 함수 호출
+  
+  
+  //setTimeout(person.display, 3000);//this가 가리키는 게 window객체가 돼 window에는 name, age가 없잖아 그래서 undefined 돼
+  let disp = person.display.bind(person);//이렇게 bind 해도 해결 가능
+  setTimeout(disp, 3000);
+  // setTimeout(() => person.display(), 3000); 이렇게 바꿔도 해결된다
+</script>
+</body>
+</html>

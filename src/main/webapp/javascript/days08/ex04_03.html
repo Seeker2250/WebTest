@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자동으로 이 안의 내용 적히기, 적혀내려가기, 자동 스크롤 적용</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+ 
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  <button>TypeWriter</button>
+  
+  <p id="demo"></p>
+
+</div>
+<script>
+  let content;
+  let timer;
+  let contentLength;
+  $("button").on("click", function(){
+    // document.body == <body>요소
+    // document.querySelector("body") == <body>요소
+    // document.documentElement == <html>요소
+
+    content = $("html").html();
+    // alert(content);
+    contentLength = content.length;
+    // alert(contentLength);//1215
+
+    typeWriter();
+    timer = setInterval(typeWriter, 10);//0.01초 간격으로
+  });
+  
+  let i = 0;
+  function typeWriter(){
+    // 첫 번째 문자부터 읽어와야 해
+    // charAt(i)를 쓰든 "문자열"[0]을 쓰든 읽어오기만 하면 뭐~
+    let oneChar = content[i++];
+
+
+    // let oldHtml = $("demo").html();
+    // $("#demo").html(oldHtml + oneChar);
+    $("#demo").html(function(index, oldHtml){
+      return oldHtml + (oneChar == '\n'?"<br>":oneChar);
+      
+    });
+    if(i == contentLength){
+      clearInterval(timer);
+    }
+    window.scrollTo(0, document.body.scrollHeight);//자동 스크롤 내려가
+    
+  }
+</script>
+</body>   
+</html>

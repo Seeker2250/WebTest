@@ -1,6 +1,6 @@
 console.log("Reply Module........");
 
-var replyService = (function() {
+var replyService = (function() {//끝까지 자체호출함수, return값 담아
 
 	//var csrfHeaderName = "${_csrf.headerName}";
 	//var csrfTokenValue = "${_csrf.token}";
@@ -95,7 +95,7 @@ var replyService = (function() {
 		$.ajax({
 			type : 'put',
 			url : '/replies/' + reply.rno,
-			data : JSON.stringify(reply),
+			data : JSON.stringify(reply),//js 객체를 JSON으로, 따라서 reply는 js 객체
 			contentType : "application/json; charset=utf-8",
 			success : function(result, status, xhr) {
 				if (callback) {
@@ -150,8 +150,8 @@ var replyService = (function() {
 	}
 	;
 
-	return {
-		add : add,
+	return {//{}있으니 객체
+		add : add,//이건 다 함수야
 		get : get,
 		getList : getList,
 		remove : remove,

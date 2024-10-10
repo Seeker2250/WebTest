@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     js 중첩 함수
+        ㄴ 함수 안에 함수
+        ㄴ 모든 함수에서 전역변수 접근 가능
+        ㄴ 상위 범위 변수 접근 가능
+        ㄴ closure : 함수 내의 지역 변수를 전역변수처럼 사용->바깥에 있는 함수는 한 번만 호출, 1번만 호출할 거니까 즉시실행함수 써
+  </xmp>
+  <button>count!</button>
+  <p id="demo"></p>
+</div>
+<script>
+  /*
+  function add(){
+    let counter = 0;//local
+    // 중첩함수
+    function plus(){
+      // 상위 범위 변수 접근 가능
+      counter += 1;
+    }//plus
+    plus();
+  }//add
+  $("button").on("click", function(){
+    $("#demo").html(add());
+  })*/
+
+  /*
+  let counter = 0;
+  let plus = function(){
+    counter +=1;
+    return counter;
+  }
+  
+  plus();
+  plus();
+  plus();
+  */
+
+  // 자체 호출 함수
+  let plus = (function (){
+    let counter = 0; //지역변수인데 plus 안에서 전역함수처럼 사용
+    return function(){//중첩함수, 이 함수가 저장되는거야.
+      counter++;
+      return counter;
+    };
+  })();
+
+  $("button").on("click", function(){
+    $("#demo").html(plus());
+  });
+</script>
+</body>
+</html>

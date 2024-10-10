@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     call() : 다른 객체의 method를 불러서 처리할 수 있는 function
+     apply() : 다른 객체의 method를 불러서 처리할 수 있는 function 
+
+     차이점 : parameter가 있는 경우
+      call() : 매개변수를 나열하여 사용
+      apply() : 매개변수 배열을 만들어 사용
+  </xmp>
+</div>
+<script>
+  let person = {
+    print:function(){
+      return this.name + "/" + this.age;
+    },
+    printa:function(city, eyeColor){
+      return this.name + "/" + this.age + "/" + city + "/" + eyeColor;
+    }
+  }
+  let person1 = {
+    name:"hong",
+    age : 20,
+    /*
+    print:function(){
+      return this.name + "/" + this.age;
+    }*/
+  };
+  let person2 = {
+    name:"admin",
+    age : 40
+    /*
+    print:function(){
+      return this.name + "/" + this.age;
+    }*/
+  };
+  // person마다 function 만들지말자
+  // person1.print(); 할 수 없어 그러니가 person 다른 객체의 print()함수를 호출하자.
+  person1.print.call(person);
+  person1.print.apply(person);
+  //parameter가 없으니 call이든 apply든 동일해
+  person1.printa.call(person, "seoul", "red");
+  person1.printa.apply(person, ["seoul", "red"]);
+  // 배열에서 가장 큰 값, 작은 값
+  const m = [3, 1, 5, 4, 2];
+  let max = Math.max.apply(null, m);//이미 Math.max라고 썼으니 누구꺼인지 명시할 필요 없어
+
+  //bind() : 다른 객체의 method를 나의 객체에 묶어버리는 것
+  let result = person.print.bind(person1)();
+  alert(result);
+</script>
+</body>
+</html>
