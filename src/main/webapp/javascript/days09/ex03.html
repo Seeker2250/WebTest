@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  <!-- 기본 이벤트 취소 -->
+  <a onclick="return test1();" href="http://www.naver.com">naver</a>
+  <br>
+
+
+  <a href="http://www.naver.com">naver</a>
+  <script>
+    function test1(){
+      let result =confirm("이동 확인");
+      // alert(result);//true / false
+      return result;//취소 false 확인 true
+    }
+
+
+    // JQuery로 기본 이벤트 취소
+    $("a").last().on("click", function(event){
+      let result =confirm("이동 확인");
+      if(!result){//취소
+        // event.stopPropagation();//이벤트 버블링(자식->부모) stop
+        event.preventDefault();
+      }
+    })
+  </script>
+</div>
+</body>
+</html>

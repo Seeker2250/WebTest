@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  <button onclick="windowOpen();">새 창 열기</button>
+  <button onclick="windowClose();">창 닫기</button>
+</div>
+<script>
+  let newWindow;//undefined
+  function windowOpen(){
+    const windowFeatures = "left=100,top=200,width=600,height=500";
+    if(!newWindow)
+      window.open("ex05_02.html", "", windowFeatures);//window.open("열 파일 이름", "이름값", "위치 및 크기 값");    
+    else
+      newWindow.focus();
+  };
+  function windowClose(){
+    if(newWindow){
+    newWindow.close();
+    newWindow = undefined;
+    }
+  };
+  /*
+  function windowOpen(){
+    const windowFeatures = "left=100,top=200,width=600,height=500";
+    window.open("ex05_02.html", "ex05_02", windowFeatures);//window.open("열 파일 이름", "이름값", "위치 및 크기 값");    
+  };
+  function windowClose(){
+    window.close();
+  };*/
+</script>
+</body>
+</html>

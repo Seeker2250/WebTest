@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://localhost/webPro/resources/cdn-main/example.css"
+    />
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+      span.material-symbols-outlined {
+        vertical-align: text-bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="main">
+        <a href="#" style="position: absolute; top: 30px">seeker home</a>
+      </h1>
+      <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </header>
+    <div>
+      <xmp class="code"></xmp>
+      <img src="../images/item01.gif" alt="" />
+      <script>
+        // item01~item21 이미지 랜덤하게 클릭하는 곳에 추가
+        function getRandom(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        document.oncontextmenu = function () {
+          // alert("오른쪽 마우스를 사용할 수 없습니당~");
+          return false;
+        };
+
+        document.onmousedown = function () {
+          console.log(event.button);
+          if (event.button == 0) {
+            //왼쪽
+            // <title></title>
+            document.title = event.clientX +" / " + event.clientY + " / " + $("img").width();
+            //
+            let img = document.createElement("img");
+            var imgNo = getRandom(1, 21).toString().padStart(2, 0);
+            let src = `../images/item${imgNo}.gif`;
+            img.setAttribute("src", src);
+
+            let left = event.clientX - $("img").width()/2;
+            let top = event.clientY - $("img").height()/2;
+            img.setAttribute("style", `position:absolute;left:${left}px; top:${top}px`);
+
+            document.body.appendChild(img);
+          } else if (event.button == 1) {
+            //휠
+            document.body.removeChild(event.srcElement);
+          } else if (event.button == 2) {
+            //오른쪽
+            document.querySelectorAll('img').forEach(img => {
+              img.remove();
+            });
+          }
+
+        };
+      </script>
+    </div>
+  </body>
+</html>
