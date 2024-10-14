@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<!--CDN 방식 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<script src="jquery-3.7.1.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    1. jQuery는 
+    ㄴ 빠르고 작으며 기능이 풍부한 JavaScript 라이브러리
+    ㄴ 다양한 브라우저에서 작동하는 사용하기 쉬운 API로 
+    ㄴ HTML 문서 탐색 및 조작
+    ㄴ 이벤트 처리
+    ㄴ 애니메이션 
+    ㄴ Ajax와 같은 작업을 훨씬 더 간단하게 만들어줍니다. 
+    ㄴ 다재다능함과 확장성이 결합된 jQuery는 수백만 명의 
+       사람들이 JavaScript를 작성하는 방식을 바꾸어 놓았습니다.  
+    
+    2. CDN (Content Delevery Network)은 전세계에 분산된 서버에서 
+          jQuery를 호스팅하여 성능상의 이점을 제공할 수 있습니다.
+
+    3. jquery 사용하는 구문( 형식 )
+      $(jquery selector).action();
+      1) jquery selector
+      2) action()
+
+    4. 웹 페이지에서 jquery 외에 다른 library, framework 사용할 때
+       $기호 충돌 가능성 존재.
+       Angular, backbone
+  </xmp>
+  <button id="button">확인</button>
+  <p id="demo"></p>
+  <script>
+   /*
+    $("#button").on("click", function(){
+      $("#demo").text("김준석");
+    });
+    */
+
+    $.noConflict();//$ 기호 해제
+    jQuery("#button").on("click", function(){
+      jQuery("#demo").text("김준석");
+    });
+    //jQuery라는 변수명도 충돌이라면?
+
+    var test = $.noConflict();//$ 기호 해제
+    test("#button").on("click", function(){
+      test("#demo").text("김준석");
+    });
+  </script>
+</div>
+</body>
+</html>

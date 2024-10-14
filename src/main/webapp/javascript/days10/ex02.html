@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://localhost/webPro/images/SiSt.ico"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://localhost/webPro/resources/cdn-main/example.css"
+    />
+    <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+    <style>
+      span.material-symbols-outlined {
+        vertical-align: text-bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="main">
+        <a href="#" style="position: absolute; top: 30px">seeker home</a>
+      </h1>
+      <ul>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </header>
+    <div>
+      <xmp class="code"
+>
+     쿠키 생성
+     쿠키 수정
+     쿠키 삭제
+     쿠키 조회
+
+     js 쿠키 : document.cookie 속성 사용
+     일부 브라우저에서는 _path을 설정하지 않으면 삭제 허용하지 않는 경우도 있다.
+  </xmp
+      >
+      쿠키 이름 :
+      <input type="text" id="cookieName" autofocus="autofocus" /><br />
+      쿠키값 : <input type="text" id="cookieValue" /><br />
+      <br />
+      <button onclick="setCookie()">쿠키생성</button>
+      <button onclick="getAllCookie()">모든 쿠키 조회</button>
+      <button onclick="getCookie()">쿠키 확인</button>
+      <button onclick="delCookie()">쿠키 삭제</button>
+
+      <p id="demo"></p>
+      <script>
+        function setCookie() {
+          let cname = $("#cookieName").val();
+          let cvalue = $("#cookieValue").val();
+
+          //js escape(), unescape()
+          //$("#demo").html(escape(cvalue));//%uD64D%uAE38%uB3D9 나옴
+          //한글이 있는 경우에는 %uXXXXXX 변환해서 쿠키 저장
+
+          let now = new Date();
+          now.setDate(now.getDate() + 10); //오늘부터 10일 동안
+          let expires = now.toUTCString(); //만기 날짜
+          document.cookie = `${cname}=${encodeURIComponent(
+            cvalue
+          )}; expires=${expires}; path=/`;
+
+          //  // 쿠키 확인
+          //  console.log(document.cookie);
+          // $("#demo").text(document.cookie);
+
+          // 입력받은 값 초기화
+          $("#cookieName").val("");
+          $("#cookieValue").val("");
+        }
+
+        //id=admin
+        function getAllCookie() {
+          let cookies = document.cookie;
+          $("#demo").html(cookies);
+        }
+
+        function getCookie() {
+          let cookies = document.cookie;
+          let cname = $("#cookieName").val();
+          let cvalue;
+          let pattern = /;\s/
+          let cookieArr = cookies.split(pattern);
+          cookieArr.forEach(function(element, index, array){
+            let cnvArr = element.split("=");
+            if(cnvArr[0]==cname){
+              cvalue = unescape(cnvArr[1]);
+              return cvalue;
+            };
+          });
+          if(cvalue){//빈 문자열이라면
+            $("#cookieValue").val(cvalue);
+          }else{
+            alert("존재하지 않는 쿠키 이름이다.")
+          }
+          /*
+            let cvalue = document.cookies.split(";");
+            for (let cookie of cvalue) {
+              let c = cookies.trim();
+              if (c.indexOf(name + "=") === 0) {
+                return c.substring((name + "=").length, c.length);
+            }//if
+          }//for
+            return "";
+            */
+        }//getCookie()
+
+
+        function delCookie() {
+          // 만료시점을 설정하지 않으면 세션이 끊어질 때 자동으로 쿠키 삭제
+          // 자동으로 쿠키는 삭제(브라우저 닫을 때)
+
+          // 만료시점이 지난 경우에 쿠키 삭제
+          // 만류시점 + 10일=> 만료시점을 과거로 설정해서 다시 쿠키 설정하면 삭제
+
+          let cname = $("#cookieName").val();
+
+          let now = new Date();
+          now.setDate(now.getDate() - 10); //10일 전
+          let expires = now.toUTCString(); //만기 날짜
+          document.cookie = `${cname}=; expires=${expires}; path=/`;
+          
+          // 입력받은 값 초기화
+          $("#cookieName").val("");
+          $("#cookieValue").val("");
+        }
+        
+      </script>
+    </div>
+  </body>
+</html>
