@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">seeker home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     jQuery DOM 조작
+     1. content 조작
+        js에선 innerText, innerHTML, value
+        jq에선 test()   , html()   , val()
+
+     2. 속성 조작
+        js에서 setAttribute(), getAttribute() 객체명.속성명
+        jq에서 attr(), prop()
+
+     3. 새로운 요소 추가
+        js에서 createElement(), appendChild()
+        jq에서 append(), prepend(), apppendTo(), prependTo(), before(), after()
+
+     4. 요소 제거
+        empty(), remove()
+
+     5. jQuery CSS 조작
+        addClass()
+        removeClass()
+        toggleClass()
+        css()
+
+      6. width()              height()
+         innerWidth()         innerHeight() +패딩
+         outerWidth()         outerHeight() +보더
+         outerWidth(true)     outerHeight() +마진
+  </xmp>
+  <h3> h3 태그 설명 </h3>
+  <script>
+    $("h3").myAlert("사용자가 만든 경고창");
+    //jQuery 객체가 사용할 수 있는 함수 등록
+    //$ == jQuery == window.jQuery
+    // prototype은 object constructor사용해서 속성, 메소드 추가
+    // $.prototype.속성
+    // $.prototype.메소드
+    // $.fn은 $.prototype과 같아
+    $.fn.myAlert = function(msg){
+      alert(`[${msg}]`);
+    }
+  </script>
+
+
+  <script>
+    //모든 자식 요소 제거
+    // $("xmp.code").empty();
+    //$("#demo").html("");은 $("#demo").empty();와 같아
+
+    // 요소 자체를 제거 + 모든 자식 요소 제거
+    // $("xmp.code").remove();
+
+    $("xmp.code").before("<b>앞</b>").after("<b>뒤</b>");
+      </script>
+</div>
+</body>
+</html>
